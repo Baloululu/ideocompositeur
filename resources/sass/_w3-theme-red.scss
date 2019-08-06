@@ -1,17 +1,17 @@
-$w3-theme-l5: #f4faf4;
-$w3-theme-l4: #dbefdc;
-$w3-theme-l3: #b7dfb8;
-$w3-theme-l2: #93cf95;
-$w3-theme-l1: #6ec071;
-$w3-theme-d1: #459c48;
-$w3-theme-d2: #3d8b40;
-$w3-theme-d3: #357a38;
-$w3-theme-d4: #2e6830;
-$w3-theme-d5: #265728;
+$w3-theme-l5: #fef4f3;
+$w3-theme-l4: #fdd9d6;
+$w3-theme-l3: #fbb3ae;
+$w3-theme-l2: #f98d85;
+$w3-theme-l1: #f6665c;
+$w3-theme-d1: #f32617;
+$w3-theme-d2: #e11a0c;
+$w3-theme-d3: #c5170a;
+$w3-theme-d4: #a91409;
+$w3-theme-d5: #8d1007;
 
-$w3-theme-light: #f4faf4;
-$w3-theme: #4caf50;
-$w3-theme-dark: #265728;
+$w3-theme-light: #fef4f3;
+$w3-theme: #f44336;
+$w3-theme-dark: #8d1007;
 
 @include color('theme-l5', $w3-theme-l5);
 @include color('theme-l4', $w3-theme-l4);

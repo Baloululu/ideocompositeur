@@ -12,7 +12,9 @@ const mix = require('laravel-mix');
  */
 
 mix.js(['resources/js/app.js', 'resources/js/modernizr-custom.js'], 'public/js')
-    .sass('resources/sass/app.scss', 'public/css')
+    .sass('resources/sass/common.scss', 'public/css')
+    .sass('resources/sass/studio.scss', 'public/css')
+    .sass('resources/sass/compo.scss', 'public/css')
     .copyDirectory('resources/images/common', 'public/images/common');
 
 mix.browserSync({
