@@ -4,6 +4,7 @@
 
 @import "mixin";
 @import 'w3';
+@import "variables";
 
 $medium-min: 800px;
 $large-min: 1280px;
@@ -21,7 +22,7 @@ html.is-animating .transition-fade {
   opacity: 0;
 }
 
-.fond1, .fond2, .fond3{
+.fondMenu, .fond2, .fond3{
   background-attachment: fixed;
   background-position: center;
   background-repeat: no-repeat;
@@ -29,33 +30,61 @@ html.is-animating .transition-fade {
   height: 300px;
 }
 
+.fondMenu{
+  height: 90%;
+}
+
+.dark-red{
+  background-color: $dark-red;
+  color: white;
+}
+
+.theme-light-menu{
+  color: black;
+}
+
+.bandeauMenu{
+  background-color: rgba(249, 249, 249, 0.8);
+}
+
+.borderMenu{
+  border-top: solid 2px $light-grey;
+}
+
+.diagonalSvg{
+  --color-1: #4f4f4f;
+  --color-2: #8d1007;
+}
+
+@media (max-width:992px){
+  .theme-light-menu{
+    background-color: #f9f9f9;
+  }
+}
+
 .no-webp{
-    .fond1{
+    .fondMenu {
         background-image: url("images/fonds/small/sMenu.jpg");
-        height: 100%;
     }
 }
 
 .webp{
-    .fond1{
+    .fondMenu {
         background-image: url("images/fonds/small/sMenu.webp");
-        height: 100%;
     }
 }
 
 @media (min-width:$medium-min)
 {
     .no-webp{
-        .fond1{
+        .fondMenu {
             background-image: url("images/fonds/medium/mMenu.jpg");
-            height: 100%;
         }
     }
 
     .webp{
-        .fond1{
+        .fondMenu {
             background-image: url("images/fonds/medium/mMenu.webp");
-            height: 100%;
         }
     }
 }
@@ -63,16 +92,14 @@ html.is-animating .transition-fade {
 @media (min-width:$large-min)
 {
     .no-webp{
-        .fond1{
+        .fondMenu {
             background-image: url("images/fonds/large/lMenu.jpg");
-            height: 100%;
         }
     }
 
     .webp{
-        .fond1{
+        .fondMenu {
             background-image: url("images/fonds/large/lMenu.webp");
-            height: 100%;
         }
     }
 }

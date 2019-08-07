@@ -12,7 +12,7 @@
 
 <body class="w3-theme-light">
 
-<div id="swup" class="transition-fade">
+<div id="swup" class="transition-fade w3-auto">
 
     @yield('content')
 
