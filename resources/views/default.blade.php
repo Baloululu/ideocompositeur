@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <link rel="stylesheet" href="{{ mix('css/common.css') }}">
+    <link rel="stylesheet" href="{{ mix('css/common.css') }}" type="text/css">
     @yield('theme')
 
     <title>@yield('title')</title>
@@ -20,6 +20,6 @@
 
 </body>
 
-<script src="{{ mix('js/app.js') }}"></script>
+<script src="{{ mix('js/app.js') }}" type="application/javascript"></script>
 
 </html>

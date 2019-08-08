@@ -1,0 +1,37 @@
+#studio, #compo{
+  width: 45%;
+  height: 100%;
+  transition: width 0.5s;
+}
+
+.small{
+  width: 25% !important;
+}
+
+.large{
+  width: 65% !important;
+}
+
+.dark-red{
+  background-color: $dark-red;
+  color: white;
+}
+
+.dark-grey{
+  background-color: $dark-grey;
+  color: white;
+  fill: $dark-grey;
+}
+
+.light-grey{
+  fill: $light-grey;
+}
+
+.theme-light-menu{
+  color: black;
+}
+
+.bandeau{
+  border-top: solid 2px $light-grey;
+  height: 100%;
+}

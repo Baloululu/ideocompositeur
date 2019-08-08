@@ -1,7 +1,7 @@
 @extends('default')
 
 @section('theme')
-    <link rel="stylesheet" href="{{ mix('css/studio.css') }}">
+    <link rel="stylesheet" href="{{ mix('css/studio.css') }}" type="text/css">
 @endsection
 
 @section('content')
@@ -15,34 +15,35 @@
         <div style="height: 60%"></div>
 
         <div class="w3-display-container theme-light-menu" style="height: 30%">
-            <div class="w3-container w3-display-left w3-center bandeauMenu width100">
+            <div class="w3-container w3-display-left w3-center transparent-light-grey width100">
                 <h2>IDEO compositeur, c'est un créateur et un studio à votre disposition !</h2>
             </div>
         </div>
 
         <div class="w3-center w3-row" style="height: 10%">
-            <a class="w3-col w3-block" href="#" style="width: 45%;height: 100%">
-                <div class="w3-display-container w3-theme-dark borderMenu" style="height: 100%">
+            <a id="studio" class="w3-col w3-block" href="{{ route('studio') }}" data-swup-preload>
+                <div class="w3-display-container dark-grey bandeau">
                     <div class="w3-container w3-display-left w3-center width100">
                         <h4 style="margin: 0">STUDIO</h4>
                     </div>
                 </div>
             </a>
 
-            <div class="w3-col w3-theme-light borderMenu" style="width: 10%;height: 100%">
-                <svg class="diagonalSvg" height="100%" width="100%" viewBox="0 0 100 100" preserveAspectRatio="none">
-                    <polygon fill="var(--color-1)" stroke-width=0 points="0,0 0,95 95,0" />
-                    <polygon fill="var(--color-2)" stroke-width=0 points="100,5 5,100 100,100" />
+            <div class="w3-col dark-red bandeau" style="width: 10%; overflow: hidden">
+                <svg height="100%" width="100%" viewBox="0 0 100 100" preserveAspectRatio="none">
+                    <polygon class="dark-grey" stroke-width=0 points="0,0 0,100 95,0" />
+                    <polygon class="light-grey" stroke-width=0 points="95,0 100,0 5,100 0,100" />
                 </svg>
             </div>
 
-            <a class="w3-col w3-block" href="#" style="width: 45%;height: 100%">
-                <div class="w3-display-container dark-red borderMenu" style="height: 100%">
+            <a id="compo" class="w3-col w3-block" href="{{ route('compo') }}" data-swup-preload>
+                <div class="w3-display-container dark-red bandeau">
                     <div class="w3-container w3-display-left w3-center width100">
                         <h4 style="margin: 0">MES COMPOS</h4>
                     </div>
                 </div>
             </a>
         </div>
+
     </div>
 @endsection

@@ -14,3 +14,11 @@
 Route::get('/', function () {
     return view('menu');
 })->name("home");
+
+Route::get('studio', function (){
+    return view('studio');
+})->name("studio");
+
+Route::get('compo', function (){
+    return view('compo');
+})->name("compo");

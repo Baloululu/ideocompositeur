@@ -5,6 +5,7 @@
 @import "mixin";
 @import 'w3';
 @import "variables";
+@import "bandeau";
 
 $medium-min: 800px;
 $large-min: 1280px;
@@ -34,26 +35,8 @@ html.is-animating .transition-fade {
   height: 90%;
 }
 
-.dark-red{
-  background-color: $dark-red;
-  color: white;
-}
-
-.theme-light-menu{
-  color: black;
-}
-
-.bandeauMenu{
+.transparent-light-grey{
   background-color: rgba(249, 249, 249, 0.8);
-}
-
-.borderMenu{
-  border-top: solid 2px $light-grey;
-}
-
-.diagonalSvg{
-  --color-1: #4f4f4f;
-  --color-2: #8d1007;
 }
 
 @media (max-width:992px){
