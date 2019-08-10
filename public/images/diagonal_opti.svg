@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="100" height="100" preserveAspectRatio="none" version="1.1" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+<g transform="translate(0 -271)" fill-rule="evenodd">
+<path d="m0 271v100l100-100z" fill="#4f4f4f"/>
+<path d="m100 371v-100l-100 100z" fill="#8d1007"/>
+<path d="m0 371h3l97-100h-3z" fill="#f9f9f9"/>
+</g>
+</svg>

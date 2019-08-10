@@ -1,1 +1,2967 @@
-!function(e){var t={};function n(o){if(t[o])return t[o].exports;var r=t[o]={i:o,l:!1,exports:{}};return e[o].call(r.exports,r,r.exports,n),r.l=!0,r.exports}n.m=e,n.c=t,n.d=function(e,t,o){n.o(e,t)||Object.defineProperty(e,t,{enumerable:!0,get:o})},n.r=function(e){"undefined"!=typeof Symbol&&Symbol.toStringTag&&Object.defineProperty(e,Symbol.toStringTag,{value:"Module"}),Object.defineProperty(e,"__esModule",{value:!0})},n.t=function(e,t){if(1&t&&(e=n(e)),8&t)return e;if(4&t&&"object"==typeof e&&e&&e.__esModule)return e;var o=Object.create(null);if(n.r(o),Object.defineProperty(o,"default",{enumerable:!0,value:e}),2&t&&"string"!=typeof e)for(var r in e)n.d(o,r,function(t){return e[t]}.bind(null,r));return o},n.n=function(e){var t=e&&e.__esModule?function(){return e.default}:function(){return e};return n.d(t,"a",t),t},n.o=function(e,t){return Object.prototype.hasOwnProperty.call(e,t)},n.p="/",n(n.s=0)}({"+3Np":function(e,t,n){"use strict";Object.defineProperty(t,"__esModule",{value:!0});var o="function"==typeof Symbol&&"symbol"==typeof Symbol.iterator?function(e){return typeof e}:function(e){return e&&"function"==typeof Symbol&&e.constructor===Symbol&&e!==Symbol.prototype?"symbol":typeof e},r=n("izH8");t.default=function(e,t){var n=e.replace("<body",'<div id="swupBody"').replace("</body>","</div>"),i=document.createElement("div");i.innerHTML=n;for(var a=[],s=function(e){if(null==i.querySelector(t[e]))return{v:null};(0,r.queryAll)(t[e]).forEach(function(n,o){(0,r.queryAll)(t[e],i)[o].setAttribute("data-swup",a.length),a.push((0,r.queryAll)(t[e],i)[o].outerHTML)})},l=0;l<t.length;l++){var u=s(l);if("object"===(void 0===u?"undefined":o(u)))return u.v}var c={title:i.querySelector("title").innerText,pageClass:i.querySelector("#swupBody").className,originalContent:e,blocks:a};return i.innerHTML="",i=null,c}},0:function(e,t,n){n("bUC5"),n("hbyh"),n("oMDg"),n("sr85"),e.exports=n("2Qb6")},"1Xf+":function(e,t,n){"use strict";Object.defineProperty(t,"__esModule",{value:!0});var o=function(){function e(e,t){for(var n=0;n<t.length;n++){var o=t[n];o.enumerable=o.enumerable||!1,o.configurable=!0,"value"in o&&(o.writable=!0),Object.defineProperty(e,o.key,o)}}return function(t,n,o){return n&&e(t.prototype,n),o&&e(t,o),t}}();var r=function(){function e(t){!function(e,t){if(!(e instanceof t))throw new TypeError("Cannot call a class as a function")}(this,e),t instanceof Element||t instanceof SVGElement?this.link=t:(this.link=document.createElement("a"),this.link.href=t)}return o(e,[{key:"getPath",value:function(){var e=this.link.pathname;return"/"!==e[0]&&(e="/"+e),e}},{key:"getAddress",value:function(){var e=this.link.pathname+this.link.search;return this.link.getAttribute("xlink:href")&&(e=this.link.getAttribute("xlink:href")),"/"!==e[0]&&(e="/"+e),e}},{key:"getHash",value:function(){return this.link.hash}}]),e}();t.default=r},"2Qb6":function(e,t){},"2jTK":function(e,t,n){"use strict";Object.defineProperty(t,"__esModule",{value:!0});var o=n("izH8");t.default=function(e,t){for(var n=0,r=function(r){null==e.querySelector(t[r])?console.warn("Element "+t[r]+" is not in current page."):(0,o.queryAll)(t[r]).forEach(function(i,a){(0,o.queryAll)(t[r],e)[a].setAttribute("data-swup",n),n++})},i=0;i<t.length;i++)r(i)}},"6G6b":function(e,t,n){"use strict";Object.defineProperty(t,"__esModule",{value:!0});t.default=function(){return window.location.pathname+window.location.search}},"9S/K":function(e,t,n){"use strict";Object.defineProperty(t,"__esModule",{value:!0});var o=Object.assign||function(e){for(var t=1;t<arguments.length;t++){var n=arguments[t];for(var o in n)Object.prototype.hasOwnProperty.call(n,o)&&(e[o]=n[o])}return e},r=function(){function e(e,t){for(var n=0;n<t.length;n++){var o=t[n];o.enumerable=o.enumerable||!1,o.configurable=!0,"value"in o&&(o.writable=!0),Object.defineProperty(e,o.key,o)}}return function(t,n,o){return n&&e(t.prototype,n),o&&e(t,o),t}}(),i=s(n("fN7r")),a=s(n("mdSH"));function s(e){return e&&e.__esModule?e:{default:e}}var l=function(e){function t(e){!function(e,t){if(!(e instanceof t))throw new TypeError("Cannot call a class as a function")}(this,t);var n=function(e,t){if(!e)throw new ReferenceError("this hasn't been initialised - super() hasn't been called");return!t||"object"!=typeof t&&"function"!=typeof t?e:t}(this,(t.__proto__||Object.getPrototypeOf(t)).call(this));n.name="ScrollPlugin",n.onSamePage=function(){n.swup.scrollTo(0)},n.onSamePageWithHash=function(e){var t=e.delegateTarget,o=document.querySelector(t.hash).getBoundingClientRect().top+window.pageYOffset;n.swup.scrollTo(o)},n.onTransitionStart=function(e){n.options.doScrollingRightAway&&!n.swup.scrollToElement&&n.doScrolling(e)},n.onContentReplaced=function(e){n.options.doScrollingRightAway&&!n.swup.scrollToElement||n.doScrolling(e)},n.doScrolling=function(e){var t=n.swup;if(!e||t.options.animateHistoryBrowsing)if(null!=t.scrollToElement){var o=document.querySelector(t.scrollToElement);if(null!=o){var r=o.getBoundingClientRect().top+window.pageYOffset;t.scrollTo(r)}else console.warn("Element "+t.scrollToElement+" not found");t.scrollToElement=null}else t.scrollTo(0)};return n.options=o({},{doScrollingRightAway:!1,animateScroll:!0,scrollFriction:.3,scrollAcceleration:.04},e),n}return function(e,t){if("function"!=typeof t&&null!==t)throw new TypeError("Super expression must either be null or a function, not "+typeof t);e.prototype=Object.create(t&&t.prototype,{constructor:{value:e,enumerable:!1,writable:!0,configurable:!0}}),t&&(Object.setPrototypeOf?Object.setPrototypeOf(e,t):e.__proto__=t)}(t,i.default),r(t,[{key:"mount",value:function(){var e=this,t=this.swup;t._handlers.scrollDone=[],t._handlers.scrollStart=[],this.scrl=new a.default({onStart:function(){return t.triggerEvent("scrollStart")},onEnd:function(){return t.triggerEvent("scrollDone")},onCancel:function(){return t.triggerEvent("scrollDone")},friction:this.options.scrollFriction,acceleration:this.options.scrollAcceleration}),t.scrollTo=function(n){e.options.animateScroll?e.scrl.scrollTo(n):(t.triggerEvent("scrollStart"),window.scrollTo(0,n),t.triggerEvent("scrollDone"))},t.options.animateHistoryBrowsing&&(window.history.scrollRestoration="manual"),t.on("samePage",this.onSamePage),t.on("samePageWithHash",this.onSamePageWithHash),t.on("transitionStart",this.onTransitionStart),t.on("contentReplaced",this.onContentReplaced)}},{key:"unmount",value:function(){this.swup.scrollTo=null,delete this.scrl,this.scrl=null,this.swup.off("samePage",this.onSamePage),this.swup.off("samePageWithHash",this.onSamePageWithHash),this.swup.off("transitionStart",this.onTransitionStart),this.swup.off("contentReplaced",this.onContentReplaced),this.swup._handlers.scrollDone=null,this.swup._handlers.scrollStart=null,window.history.scrollRestoration="auto"}}]),t}();t.default=l},BYqk:function(e,t,n){"use strict";Object.defineProperty(t,"__esModule",{value:!0});var o=Object.assign||function(e){for(var t=1;t<arguments.length;t++){var n=arguments[t];for(var o in n)Object.prototype.hasOwnProperty.call(n,o)&&(e[o]=n[o])}return e};t.default=function(e){var t=arguments.length>1&&void 0!==arguments[1]&&arguments[1],n={url:window.location.pathname+window.location.search,method:"GET",data:null,headers:{}},r=o({},n,e),i=new XMLHttpRequest;return i.onreadystatechange=function(){4===i.readyState&&(i.status,t(i))},i.open(r.method,r.url,!0),Object.keys(r.headers).forEach(function(e){i.setRequestHeader(e,r.headers[e])}),i.send(r.data),i}},CvEM:function(e,t,n){"use strict";Object.defineProperty(t,"__esModule",{value:!0});t.default=function(){var e=document.createElement("div"),t={WebkitTransition:"webkitTransitionEnd",MozTransition:"transitionend",OTransition:"oTransitionEnd otransitionend",transition:"transitionend"};for(var n in t)if(void 0!==e.style[n])return t[n];return!1}},HhxY:function(e,t,n){"use strict";Object.defineProperty(t,"__esModule",{value:!0});t.default=function(e,t){var n=this;if(null!=e)if(null!=t)if(this._handlers[e]&&this._handlers[e].filter(function(e){return e===t}).length){var o=this._handlers[e].filter(function(e){return e===t})[0],r=this._handlers[e].indexOf(o);r>-1&&this._handlers[e].splice(r,1)}else console.warn("Handler for event '"+e+"' no found.");else this._handlers[e]=[];else Object.keys(this._handlers).forEach(function(e){n._handlers[e]=[]})}},Ijqz:function(e,t,n){"use strict";Object.defineProperty(t,"__esModule",{value:!0});t.default=function(e,t,n){this.transition={from:e,to:t,custom:n}}},NWnN:function(e,t,n){"use strict";Object.defineProperty(t,"__esModule",{value:!0});var o=Object.assign||function(e){for(var t=1;t<arguments.length;t++){var n=arguments[t];for(var o in n)Object.prototype.hasOwnProperty.call(n,o)&&(e[o]=n[o])}return e},r=function(){function e(e,t){for(var n=0;n<t.length;n++){var o=t[n];o.enumerable=o.enumerable||!1,o.configurable=!0,"value"in o&&(o.writable=!0),Object.defineProperty(e,o.key,o)}}return function(t,n,o){return n&&e(t.prototype,n),o&&e(t,o),t}}(),i=y(n("jFDo")),a=y(n("XVVL")),s=y(n("iwYJ")),l=y(n("k1yQ")),u=y(n("hwaQ")),c=y(n("c+2F")),f=y(n("HhxY")),d=y(n("Ijqz")),p=y(n("hCH/")),h=y(n("lt5t")),g=n("qRPr"),m=n("izH8"),v=n("YVRM");function y(e){return e&&e.__esModule?e:{default:e}}var w=function(){function e(t){!function(e,t){if(!(e instanceof t))throw new TypeError("Cannot call a class as a function")}(this,e);var n={animateHistoryBrowsing:!1,animationSelector:'[class*="transition-"]',linkSelector:'a[href^="'+window.location.origin+'"]:not([data-no-swup]), a[href^="/"]:not([data-no-swup]), a[href^="#"]:not([data-no-swup])',cache:!0,containers:["#swup"],requestHeaders:{"X-Requested-With":"swup",Accept:"text/html, application/xhtml+xml"},plugins:[],skipPopStateHandling:function(e){return!(e.state&&"swup"===e.state.source)}},r=o({},n,t);this._handlers={animationInDone:[],animationInStart:[],animationOutDone:[],animationOutStart:[],animationSkipped:[],clickLink:[],contentReplaced:[],disabled:[],enabled:[],openPageInNewTab:[],pageLoaded:[],pageRetrievedFromCache:[],pageView:[],popState:[],samePage:[],samePageWithHash:[],serverError:[],transitionStart:[],transitionEnd:[],willReplaceContent:[]},this.scrollToElement=null,this.preloadPromise=null,this.options=r,this.plugins=[],this.transition={},this.delegatedListeners={},this.cache=new a.default,this.cache.swup=this,this.loadPage=s.default,this.renderPage=l.default,this.triggerEvent=u.default,this.on=c.default,this.off=f.default,this.updateTransition=d.default,this.getAnimationPromises=p.default,this.getPageData=h.default,this.log=function(){},this.use=g.use,this.unuse=g.unuse,this.findPlugin=g.findPlugin,this.enable()}return r(e,[{key:"enable",value:function(){var e=this;if("undefined"!=typeof Promise){this.delegatedListeners.click=(0,i.default)(document,this.options.linkSelector,"click",this.linkClickHandler.bind(this)),window.addEventListener("popstate",this.popStateHandler.bind(this));var t=(0,v.getDataFromHtml)(document.documentElement.outerHTML,this.options.containers);t.url=t.responseURL=(0,v.getCurrentUrl)(),this.options.cache&&this.cache.cacheUrl(t),(0,v.markSwupElements)(document.documentElement,this.options.containers),this.options.plugins.forEach(function(t){e.use(t)}),window.history.replaceState(Object.assign({},window.history.state,{url:window.location.href,random:Math.random(),source:"swup"}),document.title,window.location.href),this.triggerEvent("enabled"),document.documentElement.classList.add("swup-enabled"),this.triggerEvent("pageView")}else console.warn("Promise is not supported")}},{key:"destroy",value:function(){var e=this;this.delegatedListeners.click.destroy(),this.delegatedListeners.mouseover.destroy(),window.removeEventListener("popstate",this.popStateHandler.bind(this)),this.cache.empty(),this.options.plugins.forEach(function(t){e.unuse(t)}),(0,m.queryAll)("[data-swup]").forEach(function(e){e.removeAttribute("data-swup")}),this.off(),this.triggerEvent("disabled"),document.documentElement.classList.remove("swup-enabled")}},{key:"linkClickHandler",value:function(e){if(e.metaKey||e.ctrlKey||e.shiftKey||e.altKey)this.triggerEvent("openPageInNewTab",e);else if(0===e.button){this.triggerEvent("clickLink",e),e.preventDefault();var t=new v.Link(e.delegateTarget);if(t.getAddress()==(0,v.getCurrentUrl)()||""==t.getAddress()){if(""!=t.getHash())this.triggerEvent("samePageWithHash",e),null!=document.querySelector(t.getHash())?history.replaceState({url:t.getAddress()+t.getHash(),random:Math.random(),source:"swup"},document.title,t.getAddress()+t.getHash()):console.warn("Element for offset not found ("+t.getHash()+")");else this.triggerEvent("samePage",e)}else{""!=t.getHash()&&(this.scrollToElement=t.getHash());var n=e.delegateTarget.getAttribute("data-swup-transition");this.loadPage({url:t.getAddress(),customTransition:n},!1)}}}},{key:"popStateHandler",value:function(e){if(!this.options.skipPopStateHandling(e)){var t=new v.Link(e.state?e.state.url:window.location.pathname);""!==t.getHash()?this.scrollToElement=t.getHash():e.preventDefault(),this.triggerEvent("popState",e),this.loadPage({url:t.getAddress()},e)}}}]),e}();t.default=w},QvXe:function(e,t,n){"use strict";Object.defineProperty(t,"__esModule",{value:!0});var o=function(){function e(e,t){for(var n=0;n<t.length;n++){var o=t[n];o.enumerable=o.enumerable||!1,o.configurable=!0,"value"in o&&(o.writable=!0),Object.defineProperty(e,o.key,o)}}return function(t,n,o){return n&&e(t.prototype,n),o&&e(t,o),t}}(),r=l(n("fN7r")),i=l(n("Rz1H")),a=n("izH8"),s=n("YVRM");function l(e){return e&&e.__esModule?e:{default:e}}function u(e,t){if(!e)throw new ReferenceError("this hasn't been initialised - super() hasn't been called");return!t||"object"!=typeof t&&"function"!=typeof t?e:t}var c=function(e){function t(){var e,n,o;!function(e,t){if(!(e instanceof t))throw new TypeError("Cannot call a class as a function")}(this,t);for(var r=arguments.length,i=Array(r),l=0;l<r;l++)i[l]=arguments[l];return n=o=u(this,(e=t.__proto__||Object.getPrototypeOf(t)).call.apply(e,[this].concat(i))),o.name="PreloadPlugin",o.onContentReplaced=function(){o.swup.preloadPages()},o.onMouseover=function(e){var t=o.swup;t.triggerEvent("hoverLink",e);var n=new s.Link(e.delegateTarget);n.getAddress()===(0,s.getCurrentUrl)()||t.cache.exists(n.getAddress())||null!=t.preloadPromise||(t.preloadPromise=t.preloadPage(n.getAddress()),t.preloadPromise.route=n.getAddress(),t.preloadPromise.finally(function(){t.preloadPromise=null}))},o.preloadPage=function(e){var t=o.swup,n=new s.Link(e);return new Promise(function(e,o){n.getAddress()==(0,s.getCurrentUrl)()||t.cache.exists(n.getAddress())?e(t.cache.getPage(n.getAddress())):(0,s.fetch)({url:n.getAddress(),headers:t.options.requestHeaders},function(r){if(500===r.status)t.triggerEvent("serverError"),o();else{var i=t.getPageData(r);if(null==i)return void o(n.getAddress());i.url=n.getAddress(),t.cache.cacheUrl(i,t.options.debugMode),t.triggerEvent("pagePreloaded"),e(t.cache.getPage(n.getAddress()))}})})},o.preloadPages=function(){(0,a.queryAll)("[data-swup-preload]").forEach(function(e){o.swup.preloadPage(e.href)})},u(o,n)}return function(e,t){if("function"!=typeof t&&null!==t)throw new TypeError("Super expression must either be null or a function, not "+typeof t);e.prototype=Object.create(t&&t.prototype,{constructor:{value:e,enumerable:!1,writable:!0,configurable:!0}}),t&&(Object.setPrototypeOf?Object.setPrototypeOf(e,t):e.__proto__=t)}(t,r.default),o(t,[{key:"mount",value:function(){var e=this.swup;e._handlers.pagePreloaded=[],e._handlers.hoverLink=[],e.preloadPage=this.preloadPage,e.preloadPages=this.preloadPages,e.delegatedListeners.mouseover=(0,i.default)(document.body,e.options.linkSelector,"mouseover",this.onMouseover.bind(this)),e.preloadPages(),e.on("contentReplaced",this.onContentReplaced)}},{key:"unmount",value:function(){var e=this.swup;e._handlers.pagePreloaded=null,e._handlers.hoverLink=null,e.preloadPage=null,e.preloadPages=null,e.delegatedListeners.mouseover.destroy(),e.off("contentReplaced",this.onContentReplaced)}}]),t}();t.default=c},QwAx:function(e,t,n){"use strict";Object.defineProperty(t,"__esModule",{value:!0});t.default=function(e){window.history.pushState({url:e||window.location.href.split(window.location.hostname)[1],random:Math.random(),source:"swup"},document.getElementsByTagName("title")[0].innerText,e||window.location.href.split(window.location.hostname)[1])}},Rz1H:function(e,t,n){var o=n("p0NV");function r(e,t,n,r,i){var a=function(e,t,n,r){return function(n){n.delegateTarget=o(n.target,t),n.delegateTarget&&r.call(e,n)}}.apply(this,arguments);return e.addEventListener(n,a,i),{destroy:function(){e.removeEventListener(n,a,i)}}}e.exports=function(e,t,n,o,i){return"function"==typeof e.addEventListener?r.apply(null,arguments):"function"==typeof n?r.bind(null,document).apply(null,arguments):("string"==typeof e&&(e=document.querySelectorAll(e)),Array.prototype.map.call(e,function(e){return r(e,t,n,o,i)}))}},XVVL:function(e,t,n){"use strict";Object.defineProperty(t,"__esModule",{value:!0});var o=function(){function e(e,t){for(var n=0;n<t.length;n++){var o=t[n];o.enumerable=o.enumerable||!1,o.configurable=!0,"value"in o&&(o.writable=!0),Object.defineProperty(e,o.key,o)}}return function(t,n,o){return n&&e(t.prototype,n),o&&e(t,o),t}}();var r=t.Cache=function(){function e(){!function(e,t){if(!(e instanceof t))throw new TypeError("Cannot call a class as a function")}(this,e),this.pages={},this.last=null}return o(e,[{key:"cacheUrl",value:function(e){e.url in this.pages==!1&&(this.pages[e.url]=e),this.last=this.pages[e.url],this.swup.log("Cache ("+Object.keys(this.pages).length+")",this.pages)}},{key:"getPage",value:function(e){return this.pages[e]}},{key:"getCurrentPage",value:function(){return this.getPage(window.location.pathname+window.location.search)}},{key:"exists",value:function(e){return e in this.pages}},{key:"empty",value:function(){this.pages={},this.last=null,this.swup.log("Cache cleared")}},{key:"remove",value:function(e){delete this.pages[e]}}]),e}();t.default=r},YVRM:function(e,t,n){"use strict";Object.defineProperty(t,"__esModule",{value:!0}),t.Link=t.markSwupElements=t.getCurrentUrl=t.transitionEnd=t.fetch=t.getDataFromHtml=t.createHistoryRecord=t.classify=void 0;var o=f(n("hjPM")),r=f(n("QwAx")),i=f(n("+3Np")),a=f(n("BYqk")),s=f(n("CvEM")),l=f(n("6G6b")),u=f(n("2jTK")),c=f(n("1Xf+"));function f(e){return e&&e.__esModule?e:{default:e}}t.classify=o.default,t.createHistoryRecord=r.default,t.getDataFromHtml=i.default,t.fetch=a.default,t.transitionEnd=s.default,t.getCurrentUrl=l.default,t.markSwupElements=u.default,t.Link=c.default},bUC5:function(e,t,n){"use strict";n.r(t);var o=n("NWnN"),r=n.n(o),i=n("9S/K"),a=n.n(i),s=n("gQBE"),l=n.n(s),u=n("QvXe"),c=n.n(u),f=new r.a({containers:["#swup"],plugins:[new a.a({animateScroll:!1}),new l.a,new c.a]}),d=null,p=null;function h(){d.classList.add("large"),p.classList.add("small")}function g(){p.classList.add("large"),d.classList.add("small")}function m(){d.classList.remove("large"),p.classList.remove("small")}function v(){p.classList.remove("large"),d.classList.remove("small")}function y(){d=document.getElementById("compo"),p=document.getElementById("studio"),d&&(d.addEventListener("mouseenter",h),d.addEventListener("mouseleave",m)),p&&(p.addEventListener("mouseenter",g),p.addEventListener("mouseleave",v)),console.log("mount")}y(),f.on("contentReplaced",y),f.on("willReplaceContent",function(){d&&(d.removeEventListener("mouseenter",h),d.removeEventListener("mouseleave",m)),p&&(p.removeEventListener("mouseenter",g),p.removeEventListener("mouseleave",v)),d=null,p=null,console.log("unmount")})},"c+2F":function(e,t,n){"use strict";Object.defineProperty(t,"__esModule",{value:!0});t.default=function(e,t){this._handlers[e]?this._handlers[e].push(t):console.warn("Unsupported event "+e+".")}},fN7r:function(e,t,n){"use strict";Object.defineProperty(t,"__esModule",{value:!0});var o=function(){function e(e,t){for(var n=0;n<t.length;n++){var o=t[n];o.enumerable=o.enumerable||!1,o.configurable=!0,"value"in o&&(o.writable=!0),Object.defineProperty(e,o.key,o)}}return function(t,n,o){return n&&e(t.prototype,n),o&&e(t,o),t}}();var r=function(){function e(){!function(e,t){if(!(e instanceof t))throw new TypeError("Cannot call a class as a function")}(this,e),this.isSwupPlugin=!0}return o(e,[{key:"mount",value:function(){}},{key:"unmount",value:function(){}},{key:"_beforeMount",value:function(){}},{key:"_afterUnmount",value:function(){}}]),e}();t.default=r},gQBE:function(e,t,n){"use strict";Object.defineProperty(t,"__esModule",{value:!0});var o,r=function(){function e(e,t){for(var n=0;n<t.length;n++){var o=t[n];o.enumerable=o.enumerable||!1,o.configurable=!0,"value"in o&&(o.writable=!0),Object.defineProperty(e,o.key,o)}}return function(t,n,o){return n&&e(t.prototype,n),o&&e(t,o),t}}(),i=n("fN7r"),a=(o=i)&&o.__esModule?o:{default:o};function s(e,t){if(!e)throw new ReferenceError("this hasn't been initialised - super() hasn't been called");return!t||"object"!=typeof t&&"function"!=typeof t?e:t}var l=function(e){function t(){var e,n,o;!function(e,t){if(!(e instanceof t))throw new TypeError("Cannot call a class as a function")}(this,t);for(var r=arguments.length,i=Array(r),a=0;a<r;a++)i[a]=arguments[a];return n=o=s(this,(e=t.__proto__||Object.getPrototypeOf(t)).call.apply(e,[this].concat(i))),o.name="HeadPlugin",o.getHeadAndReplace=function(){var e=o.getHeadChildren(),t=o.getNextHeadChildren();o.replaceTags(e,t)},o.getHeadChildren=function(){return document.head.children},o.getNextHeadChildren=function(){var e=o.swup.cache.getCurrentPage().originalContent.replace("<head",'<div id="swupHead"').replace("</head>","</div>"),t=document.createElement("div");t.innerHTML=e;var n=t.querySelector("#swupHead").children;return t.innerHTML="",t=null,n},o.replaceTags=function(e,t){var n=document.head,r=Boolean(document.querySelector("[data-swup-theme]")),i=o.getTagsToAdd(e,t,r),a=o.getTagsToRemove(e,t,r);a.reverse().forEach(function(e){n.removeChild(e.tag)}),i.forEach(function(e){n.insertBefore(e.tag,n.children[e.index])}),o.swup.log("Removed "+a.length+" / added "+i.length+" tags in head")},o.compareTags=function(e,t){return e.outerHTML===t.outerHTML},o.getTagsToRemove=function(e,t){for(var n=[],r=0;r<e.length;r++){for(var i=null,a=0;a<t.length;a++)if(o.compareTags(e[r],t[a])){i=a;break}null==i&&null===e[r].getAttribute("data-swup-theme")&&n.push({tag:e[r]})}return n},o.getTagsToAdd=function(e,t,n){for(var r=[],i=0;i<t.length;i++){for(var a=null,s=0;s<e.length;s++)if(o.compareTags(e[s],t[i])){a=s;break}null==a&&r.push({index:n?i+1:i,tag:t[i]})}return r},s(o,n)}return function(e,t){if("function"!=typeof t&&null!==t)throw new TypeError("Super expression must either be null or a function, not "+typeof t);e.prototype=Object.create(t&&t.prototype,{constructor:{value:e,enumerable:!1,writable:!0,configurable:!0}}),t&&(Object.setPrototypeOf?Object.setPrototypeOf(e,t):e.__proto__=t)}(t,a.default),r(t,[{key:"mount",value:function(){this.swup.on("contentReplaced",this.getHeadAndReplace)}},{key:"unmount",value:function(){this.swup.off("contentReplaced",this.getHeadAndReplace)}}]),t}();t.default=l},"hCH/":function(e,t,n){"use strict";Object.defineProperty(t,"__esModule",{value:!0});var o=n("izH8"),r=n("YVRM");t.default=function(){var e=[];return(0,o.queryAll)(this.options.animationSelector).forEach(function(t){var n=new Promise(function(e){t.addEventListener((0,r.transitionEnd)(),function(n){t==n.target&&e()})});e.push(n)}),e}},hbyh:function(e,t){function n(e){return(n="function"==typeof Symbol&&"symbol"==typeof Symbol.iterator?function(e){return typeof e}:function(e){return e&&"function"==typeof Symbol&&e.constructor===Symbol&&e!==Symbol.prototype?"symbol":typeof e})(e)}!function(e,t,o){var r=[],i=[],a={_version:"3.6.0",_config:{classPrefix:"",enableClasses:!0,enableJSClass:!0,usePrefixes:!0},_q:[],on:function(e,t){var n=this;setTimeout(function(){t(n[e])},0)},addTest:function(e,t,n){i.push({name:e,fn:t,options:n})},addAsyncTest:function(e){i.push({name:null,fn:e})}},s=function(){};function l(e,t){return n(e)===t}s.prototype=a,s=new s;var u,c,f=t.documentElement,d="svg"===f.nodeName.toLowerCase();function p(e){var t=f.className,n=s._config.classPrefix||"";if(d&&(t=t.baseVal),s._config.enableJSClass){var o=new RegExp("(^|\\s)"+n+"no-js(\\s|$)");t=t.replace(o,"$1"+n+"js$2")}s._config.enableClasses&&(t+=" "+n+e.join(" "+n),d?f.className.baseVal=t:f.className=t)}function h(e,t){if("object"==n(e))for(var o in e)u(e,o)&&h(o,e[o]);else{var r=(e=e.toLowerCase()).split("."),i=s[r[0]];if(2==r.length&&(i=i[r[1]]),void 0!==i)return s;t="function"==typeof t?t():t,1==r.length?s[r[0]]=t:(!s[r[0]]||s[r[0]]instanceof Boolean||(s[r[0]]=new Boolean(s[r[0]])),s[r[0]][r[1]]=t),p([(t&&0!=t?"":"no-")+r.join("-")]),s._trigger(e,t)}return s}u=l(c={}.hasOwnProperty,"undefined")||l(c.call,"undefined")?function(e,t){return t in e&&l(e.constructor.prototype[t],"undefined")}:function(e,t){return c.call(e,t)},a._l={},a.on=function(e,t){this._l[e]||(this._l[e]=[]),this._l[e].push(t),s.hasOwnProperty(e)&&setTimeout(function(){s._trigger(e,s[e])},0)},a._trigger=function(e,t){if(this._l[e]){var n=this._l[e];setTimeout(function(){var e;for(e=0;e<n.length;e++)(0,n[e])(t)},0),delete this._l[e]}},s._q.push(function(){a.addTest=h}),s.addAsyncTest(function(){var e=[{uri:"data:image/webp;base64,UklGRiQAAABXRUJQVlA4IBgAAAAwAQCdASoBAAEAAwA0JaQAA3AA/vuUAAA=",name:"webp"},{uri:"data:image/webp;base64,UklGRkoAAABXRUJQVlA4WAoAAAAQAAAAAAAAAAAAQUxQSAwAAAABBxAR/Q9ERP8DAABWUDggGAAAADABAJ0BKgEAAQADADQlpAADcAD++/1QAA==",name:"webp.alpha"},{uri:"data:image/webp;base64,UklGRlIAAABXRUJQVlA4WAoAAAASAAAAAAAAAAAAQU5JTQYAAAD/////AABBTk1GJgAAAAAAAAAAAAAAAAAAAGQAAABWUDhMDQAAAC8AAAAQBxAREYiI/gcA",name:"webp.animation"},{uri:"data:image/webp;base64,UklGRh4AAABXRUJQVlA4TBEAAAAvAAAAAAfQ//73v/+BiOh/AAA=",name:"webp.lossless"}],t=e.shift();function n(e,t,n){var o=new Image;function r(t){var r=!(!t||"load"!==t.type)&&1==o.width;h(e,"webp"===e&&r?new Boolean(r):r),n&&n(t)}o.onerror=r,o.onload=r,o.src=t}n(t.name,t.uri,function(t){if(t&&"load"===t.type)for(var o=0;o<e.length;o++)n(e[o].name,e[o].uri)})}),function(){var e,t,n,o,a,u;for(var c in i)if(i.hasOwnProperty(c)){if(e=[],(t=i[c]).name&&(e.push(t.name.toLowerCase()),t.options&&t.options.aliases&&t.options.aliases.length))for(n=0;n<t.options.aliases.length;n++)e.push(t.options.aliases[n].toLowerCase());for(o=l(t.fn,"function")?t.fn():t.fn,a=0;a<e.length;a++)1===(u=e[a].split(".")).length?s[u[0]]=o:(!s[u[0]]||s[u[0]]instanceof Boolean||(s[u[0]]=new Boolean(s[u[0]])),s[u[0]][u[1]]=o),r.push((o?"":"no-")+u.join("-"))}}(),p(r),delete a.addTest,delete a.addAsyncTest;for(var g=0;g<s._q.length;g++)s._q[g]();e.Modernizr=s}(window,document)},hjPM:function(e,t,n){"use strict";Object.defineProperty(t,"__esModule",{value:!0});t.default=function(e){var t=e.toString().toLowerCase().replace(/\s+/g,"-").replace(/\//g,"-").replace(/[^\w\-]+/g,"").replace(/\-\-+/g,"-").replace(/^-+/,"").replace(/-+$/,"");return"/"===t[0]&&(t=t.splice(1)),""===t&&(t="homepage"),t}},hwaQ:function(e,t,n){"use strict";Object.defineProperty(t,"__esModule",{value:!0});t.default=function(e,t){this._handlers[e].forEach(function(e){try{e(t)}catch(e){console.error(e)}});var n=new CustomEvent("swup:"+e,{detail:e});document.dispatchEvent(n)}},iwYJ:function(e,t,n){"use strict";Object.defineProperty(t,"__esModule",{value:!0});var o=Object.assign||function(e){for(var t=1;t<arguments.length;t++){var n=arguments[t];for(var o in n)Object.prototype.hasOwnProperty.call(n,o)&&(e[o]=n[o])}return e},r=n("YVRM");t.default=function(e,t){var n=this,i=[],a=void 0;this.triggerEvent("transitionStart",t),null!=e.customTransition?(this.updateTransition(window.location.pathname,e.url,e.customTransition),document.documentElement.classList.add("to-"+(0,r.classify)(e.customTransition))):this.updateTransition(window.location.pathname,e.url),!t||this.options.animateHistoryBrowsing?function(){if(n.triggerEvent("animationOutStart"),document.documentElement.classList.add("is-changing"),document.documentElement.classList.add("is-leaving"),document.documentElement.classList.add("is-animating"),t&&document.documentElement.classList.add("is-popstate"),document.documentElement.classList.add("to-"+(0,r.classify)(e.url)),i=n.getAnimationPromises("out"),Promise.all(i).then(function(){n.triggerEvent("animationOutDone")}),!t){var o=void 0;o=null!=n.scrollToElement?e.url+n.scrollToElement:e.url,(0,r.createHistoryRecord)(o)}}():this.triggerEvent("animationSkipped"),this.cache.exists(e.url)?(a=new Promise(function(e){e()}),this.triggerEvent("pageRetrievedFromCache")):a=this.preloadPromise&&this.preloadPromise.route==e.url?this.preloadPromise:new Promise(function(t,i){(0,r.fetch)(o({},e,{headers:n.options.requestHeaders}),function(o){if(500===o.status)return n.triggerEvent("serverError"),void i(e.url);var r=n.getPageData(o);null!=r?(r.url=e.url,n.cache.cacheUrl(r),n.triggerEvent("pageLoaded"),t()):i(e.url)})}),Promise.all(i.concat([a])).then(function(){n.renderPage(n.cache.getPage(e.url),t),n.preloadPromise=null}).catch(function(e){n.options.skipPopStateHandling=function(){return window.location=e,!0},window.history.go(-1)})}},izH8:function(e,t,n){"use strict";Object.defineProperty(t,"__esModule",{value:!0});t.query=function(e){var t=arguments.length>1&&void 0!==arguments[1]?arguments[1]:document;return"string"!=typeof e?e:t.querySelector(e)},t.queryAll=function(e){var t=arguments.length>1&&void 0!==arguments[1]?arguments[1]:document;return"string"!=typeof e?e:Array.prototype.slice.call(t.querySelectorAll(e))}},jFDo:function(e,t,n){var o=n("lNia");e.exports=function(e,t,n,r,i){var a=function(e,t,n,r){return function(n){n.delegateTarget=o(n.target,t),n.delegateTarget&&r.call(e,n)}}.apply(this,arguments);return e.addEventListener(n,a,i),{destroy:function(){e.removeEventListener(n,a,i)}}}},k1yQ:function(e,t,n){"use strict";Object.defineProperty(t,"__esModule",{value:!0});var o=Object.assign||function(e){for(var t=1;t<arguments.length;t++){var n=arguments[t];for(var o in n)Object.prototype.hasOwnProperty.call(n,o)&&(e[o]=n[o])}return e},r=(n("izH8"),n("YVRM"));t.default=function(e,t){var n=this;document.documentElement.classList.remove("is-leaving");var i=new r.Link(e.responseURL);window.location.pathname!==i.getPath()&&(window.history.replaceState({url:i.getPath(),random:Math.random(),source:"swup"},document.title,i.getPath()),this.cache.cacheUrl(o({},e,{url:i.getPath()}))),t&&!this.options.animateHistoryBrowsing||document.documentElement.classList.add("is-rendering"),this.triggerEvent("willReplaceContent",t);for(var a=0;a<e.blocks.length;a++)document.body.querySelector('[data-swup="'+a+'"]').outerHTML=e.blocks[a];document.title=e.title,this.triggerEvent("contentReplaced",t),this.triggerEvent("pageView",t),this.options.cache||this.cache.empty(),setTimeout(function(){t&&!n.options.animateHistoryBrowsing||(n.triggerEvent("animationInStart"),document.documentElement.classList.remove("is-animating"))},10);var s=this.getAnimationPromises("in");!t||this.options.animateHistoryBrowsing?Promise.all(s).then(function(){n.triggerEvent("animationInDone"),n.triggerEvent("transitionEnd",t),document.documentElement.className.split(" ").forEach(function(e){(new RegExp("^to-").test(e)||"is-changing"===e||"is-rendering"===e||"is-popstate"===e)&&document.documentElement.classList.remove(e)})}):this.triggerEvent("transitionEnd",t),this.scrollToElement=null}},lNia:function(e,t){var n=9;if("undefined"!=typeof Element&&!Element.prototype.matches){var o=Element.prototype;o.matches=o.matchesSelector||o.mozMatchesSelector||o.msMatchesSelector||o.oMatchesSelector||o.webkitMatchesSelector}e.exports=function(e,t){for(;e&&e.nodeType!==n;){if("function"==typeof e.matches&&e.matches(t))return e;e=e.parentNode}}},lt5t:function(e,t,n){"use strict";Object.defineProperty(t,"__esModule",{value:!0});var o=n("YVRM");t.default=function(e){var t=e.responseText,n=(0,o.getDataFromHtml)(t,this.options.containers);return n?(n.responseURL=e.responseURL?e.responseURL:window.location.href,n):(console.warn("Received page is invalid."),null)}},mdSH:function(e,t,n){"use strict";Object.defineProperty(t,"__esModule",{value:!0});var o=Object.assign||function(e){for(var t=1;t<arguments.length;t++){var n=arguments[t];for(var o in n)Object.prototype.hasOwnProperty.call(n,o)&&(e[o]=n[o])}return e};t.default=function e(t){var n=this;!function(e,t){if(!(e instanceof t))throw new TypeError("Cannot call a class as a function")}(this,e),this._raf=null,this._positionY=0,this._velocityY=0,this._targetPositionY=0,this._targetPositionYWithOffset=0,this._direction=0,this.scrollTo=function(e){if(e&&e.nodeType)n._targetPositionY=Math.round(e.getBoundingClientRect().top+window.pageYOffset);else{if(parseInt(n._targetPositionY)!==n._targetPositionY)return void console.error("Argument must be a number or an element.");n._targetPositionY=Math.round(e)}n._targetPositionY>document.documentElement.scrollHeight-window.innerHeight&&(n._targetPositionY=document.documentElement.scrollHeight-window.innerHeight),n._positionY=document.body.scrollTop||document.documentElement.scrollTop,n._direction=n._positionY>n._targetPositionY?-1:1,n._targetPositionYWithOffset=n._targetPositionY+n._direction,n._velocityY=0,n._positionY!==n._targetPositionY?(n.options.onStart(),n._animate()):n.options.onAlreadyAtPositions()},this._animate=function(){n._update(),n._render(),1===n._direction&&n._targetPositionY>n._positionY||-1===n._direction&&n._targetPositionY<n._positionY?(n._raf=requestAnimationFrame(n._animate),n.options.onTick()):(n._positionY=n._targetPositionY,n._render(),n._raf=null,n.options.onTick(),n.options.onEnd())},this._update=function(){var e=n._targetPositionYWithOffset-n._positionY,t=e*n.options.acceleration;return n._velocityY+=t,n._velocityY*=n.options.friction,n._positionY+=n._velocityY,Math.abs(e)},this._render=function(){window.scrollTo(0,n._positionY)};this.options=o({},{onAlreadyAtPositions:function(){},onCancel:function(){},onEnd:function(){},onStart:function(){},onTick:function(){},friction:.7,acceleration:.04},t),t&&t.friction&&(this.options.friction=1-t.friction),window.addEventListener("mousewheel",function(e){n._raf&&(n.options.onCancel(),cancelAnimationFrame(n._raf),n._raf=null)},{passive:!0})}},oMDg:function(e,t){},p0NV:function(e,t){var n=9;if("undefined"!=typeof Element&&!Element.prototype.matches){var o=Element.prototype;o.matches=o.matchesSelector||o.mozMatchesSelector||o.msMatchesSelector||o.oMatchesSelector||o.webkitMatchesSelector}e.exports=function(e,t){for(;e&&e.nodeType!==n;){if("function"==typeof e.matches&&e.matches(t))return e;e=e.parentNode}}},qRPr:function(e,t,n){"use strict";Object.defineProperty(t,"__esModule",{value:!0});t.use=function(e){if(e.isSwupPlugin)return this.plugins.push(e),e.swup=this,"function"==typeof e._beforeMount&&e._beforeMount(),e.mount(),this.plugins;console.warn("Not swup plugin instance "+e+".")},t.unuse=function(e){var t=void 0;if(t="string"==typeof e?this.plugins.find(function(t){return e===t.name}):e){t.unmount(),"function"==typeof t._afterUnmount&&t._afterUnmount();var n=this.plugins.indexOf(t);return this.plugins.splice(n,1),this.plugins}console.warn("No such plugin.")},t.findPlugin=function(e){return this.plugins.find(function(t){return e===t.name})}},sr85:function(e,t){}});
+/******/ (function(modules) { // webpackBootstrap
+/******/ 	// The module cache
+/******/ 	var installedModules = {};
+/******/
+/******/ 	// The require function
+/******/ 	function __webpack_require__(moduleId) {
+/******/
+/******/ 		// Check if module is in cache
+/******/ 		if(installedModules[moduleId]) {
+/******/ 			return installedModules[moduleId].exports;
+/******/ 		}
+/******/ 		// Create a new module (and put it into the cache)
+/******/ 		var module = installedModules[moduleId] = {
+/******/ 			i: moduleId,
+/******/ 			l: false,
+/******/ 			exports: {}
+/******/ 		};
+/******/
+/******/ 		// Execute the module function
+/******/ 		modules[moduleId].call(module.exports, module, module.exports, __webpack_require__);
+/******/
+/******/ 		// Flag the module as loaded
+/******/ 		module.l = true;
+/******/
+/******/ 		// Return the exports of the module
+/******/ 		return module.exports;
+/******/ 	}
+/******/
+/******/
+/******/ 	// expose the modules object (__webpack_modules__)
+/******/ 	__webpack_require__.m = modules;
+/******/
+/******/ 	// expose the module cache
+/******/ 	__webpack_require__.c = installedModules;
+/******/
+/******/ 	// define getter function for harmony exports
+/******/ 	__webpack_require__.d = function(exports, name, getter) {
+/******/ 		if(!__webpack_require__.o(exports, name)) {
+/******/ 			Object.defineProperty(exports, name, { enumerable: true, get: getter });
+/******/ 		}
+/******/ 	};
+/******/
+/******/ 	// define __esModule on exports
+/******/ 	__webpack_require__.r = function(exports) {
+/******/ 		if(typeof Symbol !== 'undefined' && Symbol.toStringTag) {
+/******/ 			Object.defineProperty(exports, Symbol.toStringTag, { value: 'Module' });
+/******/ 		}
+/******/ 		Object.defineProperty(exports, '__esModule', { value: true });
+/******/ 	};
+/******/
+/******/ 	// create a fake namespace object
+/******/ 	// mode & 1: value is a module id, require it
+/******/ 	// mode & 2: merge all properties of value into the ns
+/******/ 	// mode & 4: return value when already ns object
+/******/ 	// mode & 8|1: behave like require
+/******/ 	__webpack_require__.t = function(value, mode) {
+/******/ 		if(mode & 1) value = __webpack_require__(value);
+/******/ 		if(mode & 8) return value;
+/******/ 		if((mode & 4) && typeof value === 'object' && value && value.__esModule) return value;
+/******/ 		var ns = Object.create(null);
+/******/ 		__webpack_require__.r(ns);
+/******/ 		Object.defineProperty(ns, 'default', { enumerable: true, value: value });
+/******/ 		if(mode & 2 && typeof value != 'string') for(var key in value) __webpack_require__.d(ns, key, function(key) { return value[key]; }.bind(null, key));
+/******/ 		return ns;
+/******/ 	};
+/******/
+/******/ 	// getDefaultExport function for compatibility with non-harmony modules
+/******/ 	__webpack_require__.n = function(module) {
+/******/ 		var getter = module && module.__esModule ?
+/******/ 			function getDefault() { return module['default']; } :
+/******/ 			function getModuleExports() { return module; };
+/******/ 		__webpack_require__.d(getter, 'a', getter);
+/******/ 		return getter;
+/******/ 	};
+/******/
+/******/ 	// Object.prototype.hasOwnProperty.call
+/******/ 	__webpack_require__.o = function(object, property) { return Object.prototype.hasOwnProperty.call(object, property); };
+/******/
+/******/ 	// __webpack_public_path__
+/******/ 	__webpack_require__.p = "/";
+/******/
+/******/
+/******/ 	// Load entry module and return exports
+/******/ 	return __webpack_require__(__webpack_require__.s = 0);
+/******/ })
+/************************************************************************/
+/******/ ({
+
+/***/ "./node_modules/@swup/head-plugin/lib/index.js":
+/*!*****************************************************!*\
+  !*** ./node_modules/@swup/head-plugin/lib/index.js ***!
+  \*****************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+	value: true
+});
+
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+var _plugin = __webpack_require__(/*! @swup/plugin */ "./node_modules/@swup/plugin/lib/index.js");
+
+var _plugin2 = _interopRequireDefault(_plugin);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+var HeadPlugin = function (_Plugin) {
+	_inherits(HeadPlugin, _Plugin);
+
+	function HeadPlugin() {
+		var _ref;
+
+		var _temp, _this, _ret;
+
+		_classCallCheck(this, HeadPlugin);
+
+		for (var _len = arguments.length, args = Array(_len), _key = 0; _key < _len; _key++) {
+			args[_key] = arguments[_key];
+		}
+
+		return _ret = (_temp = (_this = _possibleConstructorReturn(this, (_ref = HeadPlugin.__proto__ || Object.getPrototypeOf(HeadPlugin)).call.apply(_ref, [this].concat(args))), _this), _this.name = 'HeadPlugin', _this.getHeadAndReplace = function () {
+			var headChildren = _this.getHeadChildren();
+			var nextHeadChildren = _this.getNextHeadChildren();
+
+			_this.replaceTags(headChildren, nextHeadChildren);
+		}, _this.getHeadChildren = function () {
+			return document.head.children;
+		}, _this.getNextHeadChildren = function () {
+			var pageContent = _this.swup.cache.getCurrentPage().originalContent.replace('<head', '<div id="swupHead"').replace('</head>', '</div>');
+			var element = document.createElement('div');
+			element.innerHTML = pageContent;
+			var children = element.querySelector('#swupHead').children;
+
+			// cleanup
+			element.innerHTML = '';
+			element = null;
+
+			return children;
+		}, _this.replaceTags = function (oldTags, newTags) {
+			var head = document.head;
+			var themeActive = Boolean(document.querySelector('[data-swup-theme]'));
+			var addTags = _this.getTagsToAdd(oldTags, newTags, themeActive);
+			var removeTags = _this.getTagsToRemove(oldTags, newTags, themeActive);
+
+			removeTags.reverse().forEach(function (item) {
+				head.removeChild(item.tag);
+			});
+
+			addTags.forEach(function (item) {
+				head.insertBefore(item.tag, head.children[item.index]);
+			});
+
+			_this.swup.log('Removed ' + removeTags.length + ' / added ' + addTags.length + ' tags in head');
+		}, _this.compareTags = function (oldTag, newTag) {
+			var oldTagContent = oldTag.outerHTML;
+			var newTagContent = newTag.outerHTML;
+
+			return oldTagContent === newTagContent;
+		}, _this.getTagsToRemove = function (oldTags, newTags) {
+			var removeTags = [];
+
+			for (var i = 0; i < oldTags.length; i++) {
+				var foundAt = null;
+
+				for (var j = 0; j < newTags.length; j++) {
+					if (_this.compareTags(oldTags[i], newTags[j])) {
+						foundAt = j;
+						break;
+					}
+				}
+
+				if (foundAt == null && oldTags[i].getAttribute('data-swup-theme') === null) {
+					removeTags.push({ tag: oldTags[i] });
+				}
+			}
+
+			return removeTags;
+		}, _this.getTagsToAdd = function (oldTags, newTags, themeActive) {
+			var addTags = [];
+
+			for (var i = 0; i < newTags.length; i++) {
+				var foundAt = null;
+
+				for (var j = 0; j < oldTags.length; j++) {
+					if (_this.compareTags(oldTags[j], newTags[i])) {
+						foundAt = j;
+						break;
+					}
+				}
+
+				if (foundAt == null) {
+					addTags.push({ index: themeActive ? i + 1 : i, tag: newTags[i] });
+				}
+			}
+
+			return addTags;
+		}, _temp), _possibleConstructorReturn(_this, _ret);
+	}
+
+	_createClass(HeadPlugin, [{
+		key: 'mount',
+		value: function mount() {
+			this.swup.on('contentReplaced', this.getHeadAndReplace);
+		}
+	}, {
+		key: 'unmount',
+		value: function unmount() {
+			this.swup.off('contentReplaced', this.getHeadAndReplace);
+		}
+	}]);
+
+	return HeadPlugin;
+}(_plugin2.default);
+
+exports.default = HeadPlugin;
+
+/***/ }),
+
+/***/ "./node_modules/@swup/plugin/lib/index.js":
+/*!************************************************!*\
+  !*** ./node_modules/@swup/plugin/lib/index.js ***!
+  \************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+    value: true
+});
+
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+var Plugin = function () {
+    function Plugin() {
+        _classCallCheck(this, Plugin);
+
+        this.isSwupPlugin = true;
+    }
+
+    _createClass(Plugin, [{
+        key: "mount",
+        value: function mount() {
+            // this is mount method rewritten by class extending
+            // and is executed when swup is enabled with plugin
+        }
+    }, {
+        key: "unmount",
+        value: function unmount() {
+            // this is unmount method rewritten by class extending
+            // and is executed when swup with plugin is disabled
+        }
+    }, {
+        key: "_beforeMount",
+        value: function _beforeMount() {
+            // here for any future hidden auto init
+        }
+    }, {
+        key: "_afterUnmount",
+        value: function _afterUnmount() {}
+        // here for any future hidden auto-cleanup
+
+
+        // this is here so we can tell if plugin was created by extending this class
+
+    }]);
+
+    return Plugin;
+}();
+
+exports.default = Plugin;
+
+/***/ }),
+
+/***/ "./node_modules/@swup/preload-plugin/lib/index.js":
+/*!********************************************************!*\
+  !*** ./node_modules/@swup/preload-plugin/lib/index.js ***!
+  \********************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+    value: true
+});
+
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+var _plugin = __webpack_require__(/*! @swup/plugin */ "./node_modules/@swup/plugin/lib/index.js");
+
+var _plugin2 = _interopRequireDefault(_plugin);
+
+var _delegate = __webpack_require__(/*! delegate */ "./node_modules/@swup/preload-plugin/node_modules/delegate/src/delegate.js");
+
+var _delegate2 = _interopRequireDefault(_delegate);
+
+var _utils = __webpack_require__(/*! swup/lib/utils */ "./node_modules/swup/lib/utils/index.js");
+
+var _helpers = __webpack_require__(/*! swup/lib/helpers */ "./node_modules/swup/lib/helpers/index.js");
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+var PreloadPlugin = function (_Plugin) {
+    _inherits(PreloadPlugin, _Plugin);
+
+    function PreloadPlugin() {
+        var _ref;
+
+        var _temp, _this, _ret;
+
+        _classCallCheck(this, PreloadPlugin);
+
+        for (var _len = arguments.length, args = Array(_len), _key = 0; _key < _len; _key++) {
+            args[_key] = arguments[_key];
+        }
+
+        return _ret = (_temp = (_this = _possibleConstructorReturn(this, (_ref = PreloadPlugin.__proto__ || Object.getPrototypeOf(PreloadPlugin)).call.apply(_ref, [this].concat(args))), _this), _this.name = "PreloadPlugin", _this.onContentReplaced = function () {
+            _this.swup.preloadPages();
+        }, _this.onMouseover = function (event) {
+            var swup = _this.swup;
+
+            swup.triggerEvent('hoverLink', event);
+
+            var link = new _helpers.Link(event.delegateTarget);
+            if (link.getAddress() !== (0, _helpers.getCurrentUrl)() && !swup.cache.exists(link.getAddress()) && swup.preloadPromise == null) {
+                swup.preloadPromise = swup.preloadPage(link.getAddress());
+                swup.preloadPromise.route = link.getAddress();
+                swup.preloadPromise.finally(function () {
+                    swup.preloadPromise = null;
+                });
+            }
+        }, _this.preloadPage = function (pathname) {
+            var swup = _this.swup;
+
+            var link = new _helpers.Link(pathname);
+            return new Promise(function (resolve, reject) {
+                if (link.getAddress() != (0, _helpers.getCurrentUrl)() && !swup.cache.exists(link.getAddress())) {
+                    (0, _helpers.fetch)({ url: link.getAddress(), headers: swup.options.requestHeaders }, function (response) {
+                        if (response.status === 500) {
+                            swup.triggerEvent('serverError');
+                            reject();
+                        } else {
+                            // get json data
+                            var page = swup.getPageData(response);
+                            if (page != null) {
+                                page.url = link.getAddress();
+                                swup.cache.cacheUrl(page, swup.options.debugMode);
+                                swup.triggerEvent('pagePreloaded');
+                            } else {
+                                reject(link.getAddress());
+                                return;
+                            }
+                            resolve(swup.cache.getPage(link.getAddress()));
+                        }
+                    });
+                } else {
+                    resolve(swup.cache.getPage(link.getAddress()));
+                }
+            });
+        }, _this.preloadPages = function () {
+            (0, _utils.queryAll)('[data-swup-preload]').forEach(function (element) {
+                _this.swup.preloadPage(element.href);
+            });
+        }, _temp), _possibleConstructorReturn(_this, _ret);
+    }
+
+    _createClass(PreloadPlugin, [{
+        key: 'mount',
+        value: function mount() {
+            var swup = this.swup;
+
+            swup._handlers.pagePreloaded = [];
+            swup._handlers.hoverLink = [];
+
+            swup.preloadPage = this.preloadPage;
+            swup.preloadPages = this.preloadPages;
+
+            // register mouseover handler
+            swup.delegatedListeners.mouseover = (0, _delegate2.default)(document.body, swup.options.linkSelector, 'mouseover', this.onMouseover.bind(this));
+
+            // initial preload of page form links with [data-swup-preload]
+            swup.preloadPages();
+
+            // do the same on every content replace
+            swup.on('contentReplaced', this.onContentReplaced);
+        }
+    }, {
+        key: 'unmount',
+        value: function unmount() {
+            var swup = this.swup;
+
+            swup._handlers.pagePreloaded = null;
+            swup._handlers.hoverLink = null;
+
+            swup.preloadPage = null;
+            swup.preloadPages = null;
+
+            swup.delegatedListeners.mouseover.destroy();
+
+            swup.off('contentReplaced', this.onContentReplaced);
+        }
+    }]);
+
+    return PreloadPlugin;
+}(_plugin2.default);
+
+exports.default = PreloadPlugin;
+
+/***/ }),
+
+/***/ "./node_modules/@swup/preload-plugin/node_modules/delegate/src/closest.js":
+/*!********************************************************************************!*\
+  !*** ./node_modules/@swup/preload-plugin/node_modules/delegate/src/closest.js ***!
+  \********************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+var DOCUMENT_NODE_TYPE = 9;
+
+/**
+ * A polyfill for Element.matches()
+ */
+if (typeof Element !== 'undefined' && !Element.prototype.matches) {
+    var proto = Element.prototype;
+
+    proto.matches = proto.matchesSelector ||
+                    proto.mozMatchesSelector ||
+                    proto.msMatchesSelector ||
+                    proto.oMatchesSelector ||
+                    proto.webkitMatchesSelector;
+}
+
+/**
+ * Finds the closest parent that matches a selector.
+ *
+ * @param {Element} element
+ * @param {String} selector
+ * @return {Function}
+ */
+function closest (element, selector) {
+    while (element && element.nodeType !== DOCUMENT_NODE_TYPE) {
+        if (typeof element.matches === 'function' &&
+            element.matches(selector)) {
+          return element;
+        }
+        element = element.parentNode;
+    }
+}
+
+module.exports = closest;
+
+
+/***/ }),
+
+/***/ "./node_modules/@swup/preload-plugin/node_modules/delegate/src/delegate.js":
+/*!*********************************************************************************!*\
+  !*** ./node_modules/@swup/preload-plugin/node_modules/delegate/src/delegate.js ***!
+  \*********************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+var closest = __webpack_require__(/*! ./closest */ "./node_modules/@swup/preload-plugin/node_modules/delegate/src/closest.js");
+
+/**
+ * Delegates event to a selector.
+ *
+ * @param {Element} element
+ * @param {String} selector
+ * @param {String} type
+ * @param {Function} callback
+ * @param {Boolean} useCapture
+ * @return {Object}
+ */
+function _delegate(element, selector, type, callback, useCapture) {
+    var listenerFn = listener.apply(this, arguments);
+
+    element.addEventListener(type, listenerFn, useCapture);
+
+    return {
+        destroy: function() {
+            element.removeEventListener(type, listenerFn, useCapture);
+        }
+    }
+}
+
+/**
+ * Delegates event to a selector.
+ *
+ * @param {Element|String|Array} [elements]
+ * @param {String} selector
+ * @param {String} type
+ * @param {Function} callback
+ * @param {Boolean} useCapture
+ * @return {Object}
+ */
+function delegate(elements, selector, type, callback, useCapture) {
+    // Handle the regular Element usage
+    if (typeof elements.addEventListener === 'function') {
+        return _delegate.apply(null, arguments);
+    }
+
+    // Handle Element-less usage, it defaults to global delegation
+    if (typeof type === 'function') {
+        // Use `document` as the first parameter, then apply arguments
+        // This is a short way to .unshift `arguments` without running into deoptimizations
+        return _delegate.bind(null, document).apply(null, arguments);
+    }
+
+    // Handle Selector-based usage
+    if (typeof elements === 'string') {
+        elements = document.querySelectorAll(elements);
+    }
+
+    // Handle Array-like based usage
+    return Array.prototype.map.call(elements, function (element) {
+        return _delegate(element, selector, type, callback, useCapture);
+    });
+}
+
+/**
+ * Finds closest match and invokes callback.
+ *
+ * @param {Element} element
+ * @param {String} selector
+ * @param {String} type
+ * @param {Function} callback
+ * @return {Function}
+ */
+function listener(element, selector, type, callback) {
+    return function(e) {
+        e.delegateTarget = closest(e.target, selector);
+
+        if (e.delegateTarget) {
+            callback.call(element, e);
+        }
+    }
+}
+
+module.exports = delegate;
+
+
+/***/ }),
+
+/***/ "./node_modules/@swup/scroll-plugin/lib/index.js":
+/*!*******************************************************!*\
+  !*** ./node_modules/@swup/scroll-plugin/lib/index.js ***!
+  \*******************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+    value: true
+});
+
+var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
+
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+var _plugin = __webpack_require__(/*! @swup/plugin */ "./node_modules/@swup/plugin/lib/index.js");
+
+var _plugin2 = _interopRequireDefault(_plugin);
+
+var _scrl = __webpack_require__(/*! scrl */ "./node_modules/scrl/lib/index.js");
+
+var _scrl2 = _interopRequireDefault(_scrl);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+var ScrollPlugin = function (_Plugin) {
+    _inherits(ScrollPlugin, _Plugin);
+
+    function ScrollPlugin(options) {
+        _classCallCheck(this, ScrollPlugin);
+
+        var _this = _possibleConstructorReturn(this, (ScrollPlugin.__proto__ || Object.getPrototypeOf(ScrollPlugin)).call(this));
+
+        _this.name = "ScrollPlugin";
+
+        _this.onSamePage = function () {
+            _this.swup.scrollTo(0);
+        };
+
+        _this.onSamePageWithHash = function (event) {
+            var link = event.delegateTarget;
+            var element = document.querySelector(link.hash);
+            var top = element.getBoundingClientRect().top + window.pageYOffset;
+            _this.swup.scrollTo(top);
+        };
+
+        _this.onTransitionStart = function (popstate) {
+            if (_this.options.doScrollingRightAway && !_this.swup.scrollToElement) {
+                _this.doScrolling(popstate);
+            }
+        };
+
+        _this.onContentReplaced = function (popstate) {
+            if (!_this.options.doScrollingRightAway || _this.swup.scrollToElement) {
+                _this.doScrolling(popstate);
+            }
+        };
+
+        _this.doScrolling = function (popstate) {
+            var swup = _this.swup;
+
+            if (!popstate || swup.options.animateHistoryBrowsing) {
+                if (swup.scrollToElement != null) {
+                    var element = document.querySelector(swup.scrollToElement);
+                    if (element != null) {
+                        var top = element.getBoundingClientRect().top + window.pageYOffset;
+                        swup.scrollTo(top);
+                    } else {
+                        console.warn('Element ' + swup.scrollToElement + ' not found');
+                    }
+                    swup.scrollToElement = null;
+                } else {
+                    swup.scrollTo(0);
+                }
+            }
+        };
+
+        var defaultOptions = {
+            doScrollingRightAway: false,
+            animateScroll: true,
+            scrollFriction: 0.3,
+            scrollAcceleration: 0.04
+        };
+
+        _this.options = _extends({}, defaultOptions, options);
+        return _this;
+    }
+
+    _createClass(ScrollPlugin, [{
+        key: 'mount',
+        value: function mount() {
+            var _this2 = this;
+
+            var swup = this.swup;
+
+            // add empty handlers array for submitForm event
+            swup._handlers.scrollDone = [];
+            swup._handlers.scrollStart = [];
+
+            this.scrl = new _scrl2.default({
+                onStart: function onStart() {
+                    return swup.triggerEvent('scrollStart');
+                },
+                onEnd: function onEnd() {
+                    return swup.triggerEvent('scrollDone');
+                },
+                onCancel: function onCancel() {
+                    return swup.triggerEvent('scrollDone');
+                },
+                friction: this.options.scrollFriction,
+                acceleration: this.options.scrollAcceleration
+            });
+
+            // set scrollTo method of swup and animate based on current animateScroll option
+            swup.scrollTo = function (offset) {
+                if (_this2.options.animateScroll) {
+                    _this2.scrl.scrollTo(offset);
+                } else {
+                    swup.triggerEvent('scrollStart');
+                    window.scrollTo(0, offset);
+                    swup.triggerEvent('scrollDone');
+                }
+            };
+
+            // disable browser scroll control on popstates when
+            // animateHistoryBrowsing option is enabled in swup
+            if (swup.options.animateHistoryBrowsing) {
+                window.history.scrollRestoration = 'manual';
+            }
+
+            // scroll to the top of the page
+            swup.on('samePage', this.onSamePage);
+
+            // scroll to referenced element on the same page
+            swup.on('samePageWithHash', this.onSamePageWithHash);
+
+            // scroll to the referenced element
+            swup.on('transitionStart', this.onTransitionStart);
+
+            // scroll to the referenced element when it's in the page (after render)
+            swup.on('contentReplaced', this.onContentReplaced);
+        }
+    }, {
+        key: 'unmount',
+        value: function unmount() {
+            this.swup.scrollTo = null;
+
+            delete this.scrl;
+            this.scrl = null;
+
+            this.swup.off('samePage', this.onSamePage);
+            this.swup.off('samePageWithHash', this.onSamePageWithHash);
+            this.swup.off('transitionStart', this.onTransitionStart);
+            this.swup.off('contentReplaced', this.onContentReplaced);
+
+            this.swup._handlers.scrollDone = null;
+            this.swup._handlers.scrollStart = null;
+
+            window.history.scrollRestoration = 'auto';
+        }
+    }]);
+
+    return ScrollPlugin;
+}(_plugin2.default);
+
+exports.default = ScrollPlugin;
+
+/***/ }),
+
+/***/ "./node_modules/delegate/src/closest.js":
+/*!**********************************************!*\
+  !*** ./node_modules/delegate/src/closest.js ***!
+  \**********************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+var DOCUMENT_NODE_TYPE = 9;
+
+/**
+ * A polyfill for Element.matches()
+ */
+if (typeof Element !== 'undefined' && !Element.prototype.matches) {
+    var proto = Element.prototype;
+
+    proto.matches = proto.matchesSelector ||
+                    proto.mozMatchesSelector ||
+                    proto.msMatchesSelector ||
+                    proto.oMatchesSelector ||
+                    proto.webkitMatchesSelector;
+}
+
+/**
+ * Finds the closest parent that matches a selector.
+ *
+ * @param {Element} element
+ * @param {String} selector
+ * @return {Function}
+ */
+function closest (element, selector) {
+    while (element && element.nodeType !== DOCUMENT_NODE_TYPE) {
+        if (typeof element.matches === 'function' &&
+            element.matches(selector)) {
+          return element;
+        }
+        element = element.parentNode;
+    }
+}
+
+module.exports = closest;
+
+
+/***/ }),
+
+/***/ "./node_modules/delegate/src/delegate.js":
+/*!***********************************************!*\
+  !*** ./node_modules/delegate/src/delegate.js ***!
+  \***********************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+var closest = __webpack_require__(/*! ./closest */ "./node_modules/delegate/src/closest.js");
+
+/**
+ * Delegates event to a selector.
+ *
+ * @param {Element} element
+ * @param {String} selector
+ * @param {String} type
+ * @param {Function} callback
+ * @param {Boolean} useCapture
+ * @return {Object}
+ */
+function delegate(element, selector, type, callback, useCapture) {
+    var listenerFn = listener.apply(this, arguments);
+
+    element.addEventListener(type, listenerFn, useCapture);
+
+    return {
+        destroy: function() {
+            element.removeEventListener(type, listenerFn, useCapture);
+        }
+    }
+}
+
+/**
+ * Finds closest match and invokes callback.
+ *
+ * @param {Element} element
+ * @param {String} selector
+ * @param {String} type
+ * @param {Function} callback
+ * @return {Function}
+ */
+function listener(element, selector, type, callback) {
+    return function(e) {
+        e.delegateTarget = closest(e.target, selector);
+
+        if (e.delegateTarget) {
+            callback.call(element, e);
+        }
+    }
+}
+
+module.exports = delegate;
+
+
+/***/ }),
+
+/***/ "./node_modules/scrl/lib/index.js":
+/*!****************************************!*\
+  !*** ./node_modules/scrl/lib/index.js ***!
+  \****************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+    value: true
+});
+
+var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+var Scrl = function Scrl(options) {
+    var _this = this;
+
+    _classCallCheck(this, Scrl);
+
+    this._raf = null;
+    this._positionY = 0;
+    this._velocityY = 0;
+    this._targetPositionY = 0;
+    this._targetPositionYWithOffset = 0;
+    this._direction = 0;
+
+    this.scrollTo = function (offset) {
+        if (offset && offset.nodeType) {
+            // the offset is element
+            _this._targetPositionY = Math.round(offset.getBoundingClientRect().top + window.pageYOffset);
+        } else if (parseInt(_this._targetPositionY) === _this._targetPositionY) {
+            // the offset is a number
+            _this._targetPositionY = Math.round(offset);
+        } else {
+            console.error('Argument must be a number or an element.');
+            return;
+        }
+
+        // don't animate beyond the document height
+        if (_this._targetPositionY > document.documentElement.scrollHeight - window.innerHeight) {
+            _this._targetPositionY = document.documentElement.scrollHeight - window.innerHeight;
+        }
+
+        // calculated required values
+        _this._positionY = document.body.scrollTop || document.documentElement.scrollTop;
+        _this._direction = _this._positionY > _this._targetPositionY ? -1 : 1;
+        _this._targetPositionYWithOffset = _this._targetPositionY + _this._direction;
+        _this._velocityY = 0;
+
+        if (_this._positionY !== _this._targetPositionY) {
+            // start animation
+            _this.options.onStart();
+            _this._animate();
+        } else {
+            // page is already at the position
+            _this.options.onAlreadyAtPositions();
+        }
+    };
+
+    this._animate = function () {
+        var distance = _this._update();
+        _this._render();
+
+        if (_this._direction === 1 && _this._targetPositionY > _this._positionY || _this._direction === -1 && _this._targetPositionY < _this._positionY) {
+            // calculate next position
+            _this._raf = requestAnimationFrame(_this._animate);
+            _this.options.onTick();
+        } else {
+            // finish and set position to the final position
+            _this._positionY = _this._targetPositionY;
+            _this._render();
+            _this._raf = null;
+            _this.options.onTick();
+            _this.options.onEnd();
+            // this.triggerEvent('scrollDone')
+        }
+    };
+
+    this._update = function () {
+        var distance = _this._targetPositionYWithOffset - _this._positionY;
+        var attraction = distance * _this.options.acceleration;
+
+        _this._velocityY += attraction;
+
+        _this._velocityY *= _this.options.friction;
+        _this._positionY += _this._velocityY;
+
+        return Math.abs(distance);
+    };
+
+    this._render = function () {
+        window.scrollTo(0, _this._positionY);
+    };
+
+    // default options
+    var defaults = {
+        onAlreadyAtPositions: function onAlreadyAtPositions() {},
+        onCancel: function onCancel() {},
+        onEnd: function onEnd() {},
+        onStart: function onStart() {},
+        onTick: function onTick() {},
+        friction: .7, // 1 - .3
+        acceleration: .04
+
+        // merge options
+    };this.options = _extends({}, defaults, options);
+
+    // set reverse friction
+    if (options && options.friction) {
+        this.options.friction = 1 - options.friction;
+    }
+
+    // register listener for cancel on wheel event
+    window.addEventListener('mousewheel', function (event) {
+        if (_this._raf) {
+            _this.options.onCancel();
+            cancelAnimationFrame(_this._raf);
+            _this._raf = null;
+        }
+    }, {
+        passive: true
+    });
+};
+
+exports.default = Scrl;
+
+/***/ }),
+
+/***/ "./node_modules/swup/lib/helpers/Link.js":
+/*!***********************************************!*\
+  !*** ./node_modules/swup/lib/helpers/Link.js ***!
+  \***********************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+	value: true
+});
+
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+var Link = function () {
+	function Link(elementOrUrl) {
+		_classCallCheck(this, Link);
+
+		if (elementOrUrl instanceof Element || elementOrUrl instanceof SVGElement) {
+			this.link = elementOrUrl;
+		} else {
+			this.link = document.createElement('a');
+			this.link.href = elementOrUrl;
+		}
+	}
+
+	_createClass(Link, [{
+		key: 'getPath',
+		value: function getPath() {
+			var path = this.link.pathname;
+			if (path[0] !== '/') {
+				path = '/' + path;
+			}
+			return path;
+		}
+	}, {
+		key: 'getAddress',
+		value: function getAddress() {
+			var path = this.link.pathname + this.link.search;
+
+			if (this.link.getAttribute('xlink:href')) {
+				path = this.link.getAttribute('xlink:href');
+			}
+
+			if (path[0] !== '/') {
+				path = '/' + path;
+			}
+			return path;
+		}
+	}, {
+		key: 'getHash',
+		value: function getHash() {
+			return this.link.hash;
+		}
+	}]);
+
+	return Link;
+}();
+
+exports.default = Link;
+
+/***/ }),
+
+/***/ "./node_modules/swup/lib/helpers/classify.js":
+/*!***************************************************!*\
+  !*** ./node_modules/swup/lib/helpers/classify.js ***!
+  \***************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+	value: true
+});
+var classify = function classify(text) {
+	var output = text.toString().toLowerCase().replace(/\s+/g, '-') // Replace spaces with -
+	.replace(/\//g, '-') // Replace / with -
+	.replace(/[^\w\-]+/g, '') // Remove all non-word chars
+	.replace(/\-\-+/g, '-') // Replace multiple - with single -
+	.replace(/^-+/, '') // Trim - from start of text
+	.replace(/-+$/, ''); // Trim - from end of text
+	if (output[0] === '/') output = output.splice(1);
+	if (output === '') output = 'homepage';
+	return output;
+};
+
+exports.default = classify;
+
+/***/ }),
+
+/***/ "./node_modules/swup/lib/helpers/createHistoryRecord.js":
+/*!**************************************************************!*\
+  !*** ./node_modules/swup/lib/helpers/createHistoryRecord.js ***!
+  \**************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+	value: true
+});
+var createHistoryRecord = function createHistoryRecord(url) {
+	window.history.pushState({
+		url: url || window.location.href.split(window.location.hostname)[1],
+		random: Math.random(),
+		source: 'swup'
+	}, document.getElementsByTagName('title')[0].innerText, url || window.location.href.split(window.location.hostname)[1]);
+};
+
+exports.default = createHistoryRecord;
+
+/***/ }),
+
+/***/ "./node_modules/swup/lib/helpers/fetch.js":
+/*!************************************************!*\
+  !*** ./node_modules/swup/lib/helpers/fetch.js ***!
+  \************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+	value: true
+});
+
+var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
+
+var fetch = function fetch(setOptions) {
+	var callback = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : false;
+
+	var defaults = {
+		url: window.location.pathname + window.location.search,
+		method: 'GET',
+		data: null,
+		headers: {}
+	};
+
+	var options = _extends({}, defaults, setOptions);
+
+	var request = new XMLHttpRequest();
+
+	request.onreadystatechange = function () {
+		if (request.readyState === 4) {
+			if (request.status !== 500) {
+				callback(request);
+			} else {
+				callback(request);
+			}
+		}
+	};
+
+	request.open(options.method, options.url, true);
+	Object.keys(options.headers).forEach(function (key) {
+		request.setRequestHeader(key, options.headers[key]);
+	});
+	request.send(options.data);
+	return request;
+};
+
+exports.default = fetch;
+
+/***/ }),
+
+/***/ "./node_modules/swup/lib/helpers/getCurrentUrl.js":
+/*!********************************************************!*\
+  !*** ./node_modules/swup/lib/helpers/getCurrentUrl.js ***!
+  \********************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+	value: true
+});
+var getCurrentUrl = function getCurrentUrl() {
+	return window.location.pathname + window.location.search;
+};
+
+exports.default = getCurrentUrl;
+
+/***/ }),
+
+/***/ "./node_modules/swup/lib/helpers/getDataFromHtml.js":
+/*!**********************************************************!*\
+  !*** ./node_modules/swup/lib/helpers/getDataFromHtml.js ***!
+  \**********************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+	value: true
+});
+
+var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol" ? function (obj) { return typeof obj; } : function (obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; };
+
+var _utils = __webpack_require__(/*! ../utils */ "./node_modules/swup/lib/utils/index.js");
+
+var getDataFromHtml = function getDataFromHtml(html, containers) {
+	var content = html.replace('<body', '<div id="swupBody"').replace('</body>', '</div>');
+	var fakeDom = document.createElement('div');
+	fakeDom.innerHTML = content;
+	var blocks = [];
+
+	var _loop = function _loop(i) {
+		if (fakeDom.querySelector(containers[i]) == null) {
+			// page in invalid
+			return {
+				v: null
+			};
+		} else {
+			(0, _utils.queryAll)(containers[i]).forEach(function (item, index) {
+				(0, _utils.queryAll)(containers[i], fakeDom)[index].setAttribute('data-swup', blocks.length); // marks element with data-swup
+				blocks.push((0, _utils.queryAll)(containers[i], fakeDom)[index].outerHTML);
+			});
+		}
+	};
+
+	for (var i = 0; i < containers.length; i++) {
+		var _ret = _loop(i);
+
+		if ((typeof _ret === 'undefined' ? 'undefined' : _typeof(_ret)) === "object") return _ret.v;
+	}
+
+	var json = {
+		title: fakeDom.querySelector('title').innerText,
+		pageClass: fakeDom.querySelector('#swupBody').className,
+		originalContent: html,
+		blocks: blocks
+	};
+
+	// to prevent memory leaks
+	fakeDom.innerHTML = '';
+	fakeDom = null;
+
+	return json;
+};
+
+exports.default = getDataFromHtml;
+
+/***/ }),
+
+/***/ "./node_modules/swup/lib/helpers/index.js":
+/*!************************************************!*\
+  !*** ./node_modules/swup/lib/helpers/index.js ***!
+  \************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.Link = exports.markSwupElements = exports.getCurrentUrl = exports.transitionEnd = exports.fetch = exports.getDataFromHtml = exports.createHistoryRecord = exports.classify = undefined;
+
+var _classify = __webpack_require__(/*! ./classify */ "./node_modules/swup/lib/helpers/classify.js");
+
+var _classify2 = _interopRequireDefault(_classify);
+
+var _createHistoryRecord = __webpack_require__(/*! ./createHistoryRecord */ "./node_modules/swup/lib/helpers/createHistoryRecord.js");
+
+var _createHistoryRecord2 = _interopRequireDefault(_createHistoryRecord);
+
+var _getDataFromHtml = __webpack_require__(/*! ./getDataFromHtml */ "./node_modules/swup/lib/helpers/getDataFromHtml.js");
+
+var _getDataFromHtml2 = _interopRequireDefault(_getDataFromHtml);
+
+var _fetch = __webpack_require__(/*! ./fetch */ "./node_modules/swup/lib/helpers/fetch.js");
+
+var _fetch2 = _interopRequireDefault(_fetch);
+
+var _transitionEnd = __webpack_require__(/*! ./transitionEnd */ "./node_modules/swup/lib/helpers/transitionEnd.js");
+
+var _transitionEnd2 = _interopRequireDefault(_transitionEnd);
+
+var _getCurrentUrl = __webpack_require__(/*! ./getCurrentUrl */ "./node_modules/swup/lib/helpers/getCurrentUrl.js");
+
+var _getCurrentUrl2 = _interopRequireDefault(_getCurrentUrl);
+
+var _markSwupElements = __webpack_require__(/*! ./markSwupElements */ "./node_modules/swup/lib/helpers/markSwupElements.js");
+
+var _markSwupElements2 = _interopRequireDefault(_markSwupElements);
+
+var _Link = __webpack_require__(/*! ./Link */ "./node_modules/swup/lib/helpers/Link.js");
+
+var _Link2 = _interopRequireDefault(_Link);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+var classify = exports.classify = _classify2.default;
+var createHistoryRecord = exports.createHistoryRecord = _createHistoryRecord2.default;
+var getDataFromHtml = exports.getDataFromHtml = _getDataFromHtml2.default;
+var fetch = exports.fetch = _fetch2.default;
+var transitionEnd = exports.transitionEnd = _transitionEnd2.default;
+var getCurrentUrl = exports.getCurrentUrl = _getCurrentUrl2.default;
+var markSwupElements = exports.markSwupElements = _markSwupElements2.default;
+var Link = exports.Link = _Link2.default;
+
+/***/ }),
+
+/***/ "./node_modules/swup/lib/helpers/markSwupElements.js":
+/*!***********************************************************!*\
+  !*** ./node_modules/swup/lib/helpers/markSwupElements.js ***!
+  \***********************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+	value: true
+});
+
+var _utils = __webpack_require__(/*! ../utils */ "./node_modules/swup/lib/utils/index.js");
+
+var markSwupElements = function markSwupElements(element, containers) {
+	var blocks = 0;
+
+	var _loop = function _loop(i) {
+		if (element.querySelector(containers[i]) == null) {
+			console.warn('Element ' + containers[i] + ' is not in current page.');
+		} else {
+			(0, _utils.queryAll)(containers[i]).forEach(function (item, index) {
+				(0, _utils.queryAll)(containers[i], element)[index].setAttribute('data-swup', blocks);
+				blocks++;
+			});
+		}
+	};
+
+	for (var i = 0; i < containers.length; i++) {
+		_loop(i);
+	}
+};
+
+exports.default = markSwupElements;
+
+/***/ }),
+
+/***/ "./node_modules/swup/lib/helpers/transitionEnd.js":
+/*!********************************************************!*\
+  !*** ./node_modules/swup/lib/helpers/transitionEnd.js ***!
+  \********************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+	value: true
+});
+var transitionEnd = function transitionEnd() {
+	var el = document.createElement('div');
+
+	var transEndEventNames = {
+		WebkitTransition: 'webkitTransitionEnd',
+		MozTransition: 'transitionend',
+		OTransition: 'oTransitionEnd otransitionend',
+		transition: 'transitionend'
+	};
+
+	for (var name in transEndEventNames) {
+		if (el.style[name] !== undefined) {
+			return transEndEventNames[name];
+		}
+	}
+
+	return false;
+};
+
+exports.default = transitionEnd;
+
+/***/ }),
+
+/***/ "./node_modules/swup/lib/index.js":
+/*!****************************************!*\
+  !*** ./node_modules/swup/lib/index.js ***!
+  \****************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+	value: true
+});
+
+var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
+
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+// modules
+
+
+var _delegate = __webpack_require__(/*! delegate */ "./node_modules/delegate/src/delegate.js");
+
+var _delegate2 = _interopRequireDefault(_delegate);
+
+var _Cache = __webpack_require__(/*! ./modules/Cache */ "./node_modules/swup/lib/modules/Cache.js");
+
+var _Cache2 = _interopRequireDefault(_Cache);
+
+var _loadPage = __webpack_require__(/*! ./modules/loadPage */ "./node_modules/swup/lib/modules/loadPage.js");
+
+var _loadPage2 = _interopRequireDefault(_loadPage);
+
+var _renderPage = __webpack_require__(/*! ./modules/renderPage */ "./node_modules/swup/lib/modules/renderPage.js");
+
+var _renderPage2 = _interopRequireDefault(_renderPage);
+
+var _triggerEvent = __webpack_require__(/*! ./modules/triggerEvent */ "./node_modules/swup/lib/modules/triggerEvent.js");
+
+var _triggerEvent2 = _interopRequireDefault(_triggerEvent);
+
+var _on = __webpack_require__(/*! ./modules/on */ "./node_modules/swup/lib/modules/on.js");
+
+var _on2 = _interopRequireDefault(_on);
+
+var _off = __webpack_require__(/*! ./modules/off */ "./node_modules/swup/lib/modules/off.js");
+
+var _off2 = _interopRequireDefault(_off);
+
+var _updateTransition = __webpack_require__(/*! ./modules/updateTransition */ "./node_modules/swup/lib/modules/updateTransition.js");
+
+var _updateTransition2 = _interopRequireDefault(_updateTransition);
+
+var _getAnimationPromises = __webpack_require__(/*! ./modules/getAnimationPromises */ "./node_modules/swup/lib/modules/getAnimationPromises.js");
+
+var _getAnimationPromises2 = _interopRequireDefault(_getAnimationPromises);
+
+var _getPageData = __webpack_require__(/*! ./modules/getPageData */ "./node_modules/swup/lib/modules/getPageData.js");
+
+var _getPageData2 = _interopRequireDefault(_getPageData);
+
+var _plugins = __webpack_require__(/*! ./modules/plugins */ "./node_modules/swup/lib/modules/plugins.js");
+
+var _utils = __webpack_require__(/*! ./utils */ "./node_modules/swup/lib/utils/index.js");
+
+var _helpers = __webpack_require__(/*! ./helpers */ "./node_modules/swup/lib/helpers/index.js");
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+var Swup = function () {
+	function Swup(setOptions) {
+		_classCallCheck(this, Swup);
+
+		// default options
+		var defaults = {
+			animateHistoryBrowsing: false,
+			animationSelector: '[class*="transition-"]',
+			linkSelector: 'a[href^="' + window.location.origin + '"]:not([data-no-swup]), a[href^="/"]:not([data-no-swup]), a[href^="#"]:not([data-no-swup])',
+			cache: true,
+			containers: ['#swup'],
+			requestHeaders: {
+				'X-Requested-With': 'swup',
+				Accept: 'text/html, application/xhtml+xml'
+			},
+			plugins: [],
+			skipPopStateHandling: function skipPopStateHandling(event) {
+				return !(event.state && event.state.source === 'swup');
+			}
+		};
+
+		// merge options
+		var options = _extends({}, defaults, setOptions);
+
+		// handler arrays
+		this._handlers = {
+			animationInDone: [],
+			animationInStart: [],
+			animationOutDone: [],
+			animationOutStart: [],
+			animationSkipped: [],
+			clickLink: [],
+			contentReplaced: [],
+			disabled: [],
+			enabled: [],
+			openPageInNewTab: [],
+			pageLoaded: [],
+			pageRetrievedFromCache: [],
+			pageView: [],
+			popState: [],
+			samePage: [],
+			samePageWithHash: [],
+			serverError: [],
+			transitionStart: [],
+			transitionEnd: [],
+			willReplaceContent: []
+		};
+
+		// variable for id of element to scroll to after render
+		this.scrollToElement = null;
+		// variable for promise used for preload, so no new loading of the same page starts while page is loading
+		this.preloadPromise = null;
+		// variable for save options
+		this.options = options;
+		// variable for plugins array
+		this.plugins = [];
+		// variable for current transition object
+		this.transition = {};
+		// variable for keeping event listeners from "delegate"
+		this.delegatedListeners = {};
+
+		// make modules accessible in instance
+		this.cache = new _Cache2.default();
+		this.cache.swup = this;
+		this.loadPage = _loadPage2.default;
+		this.renderPage = _renderPage2.default;
+		this.triggerEvent = _triggerEvent2.default;
+		this.on = _on2.default;
+		this.off = _off2.default;
+		this.updateTransition = _updateTransition2.default;
+		this.getAnimationPromises = _getAnimationPromises2.default;
+		this.getPageData = _getPageData2.default;
+		this.log = function () {}; // here so it can be used by plugins
+		this.use = _plugins.use;
+		this.unuse = _plugins.unuse;
+		this.findPlugin = _plugins.findPlugin;
+
+		// enable swup
+		this.enable();
+	}
+
+	_createClass(Swup, [{
+		key: 'enable',
+		value: function enable() {
+			var _this = this;
+
+			// check for Promise support
+			if (typeof Promise === 'undefined') {
+				console.warn('Promise is not supported');
+				return;
+			}
+
+			// add event listeners
+			this.delegatedListeners.click = (0, _delegate2.default)(document, this.options.linkSelector, 'click', this.linkClickHandler.bind(this));
+			window.addEventListener('popstate', this.popStateHandler.bind(this));
+
+			// initial save to cache
+			var page = (0, _helpers.getDataFromHtml)(document.documentElement.outerHTML, this.options.containers);
+			page.url = page.responseURL = (0, _helpers.getCurrentUrl)();
+			if (this.options.cache) {
+				this.cache.cacheUrl(page);
+			}
+
+			// mark swup blocks in html
+			(0, _helpers.markSwupElements)(document.documentElement, this.options.containers);
+
+			// mount plugins
+			this.options.plugins.forEach(function (plugin) {
+				_this.use(plugin);
+			});
+
+			// modify initial history record
+			window.history.replaceState(Object.assign({}, window.history.state, {
+				url: window.location.href,
+				random: Math.random(),
+				source: 'swup'
+			}), document.title, window.location.href);
+
+			// trigger enabled event
+			this.triggerEvent('enabled');
+
+			// add swup-enabled class to html tag
+			document.documentElement.classList.add('swup-enabled');
+
+			// trigger page view event
+			this.triggerEvent('pageView');
+		}
+	}, {
+		key: 'destroy',
+		value: function destroy() {
+			var _this2 = this;
+
+			// remove delegated listeners
+			this.delegatedListeners.click.destroy();
+			this.delegatedListeners.mouseover.destroy();
+
+			// remove popstate listener
+			window.removeEventListener('popstate', this.popStateHandler.bind(this));
+
+			// empty cache
+			this.cache.empty();
+
+			// unmount plugins
+			this.options.plugins.forEach(function (plugin) {
+				_this2.unuse(plugin);
+			});
+
+			// remove swup data atributes from blocks
+			(0, _utils.queryAll)('[data-swup]').forEach(function (element) {
+				element.removeAttribute('data-swup');
+			});
+
+			// remove handlers
+			this.off();
+
+			// trigger disable event
+			this.triggerEvent('disabled');
+
+			// remove swup-enabled class from html tag
+			document.documentElement.classList.remove('swup-enabled');
+		}
+	}, {
+		key: 'linkClickHandler',
+		value: function linkClickHandler(event) {
+			// no control key pressed
+			if (!event.metaKey && !event.ctrlKey && !event.shiftKey && !event.altKey) {
+				// index of pressed button needs to be checked because Firefox triggers click on all mouse buttons
+				if (event.button === 0) {
+					this.triggerEvent('clickLink', event);
+					event.preventDefault();
+					var link = new _helpers.Link(event.delegateTarget);
+					if (link.getAddress() == (0, _helpers.getCurrentUrl)() || link.getAddress() == '') {
+						// link to the same URL
+						if (link.getHash() != '') {
+							// link to the same URL with hash
+							this.triggerEvent('samePageWithHash', event);
+							var element = document.querySelector(link.getHash());
+							if (element != null) {
+								history.replaceState({
+									url: link.getAddress() + link.getHash(),
+									random: Math.random(),
+									source: 'swup'
+								}, document.title, link.getAddress() + link.getHash());
+							} else {
+								// referenced element not found
+								console.warn('Element for offset not found (' + link.getHash() + ')');
+							}
+						} else {
+							// link to the same URL without hash
+							this.triggerEvent('samePage', event);
+						}
+					} else {
+						// link to different url
+						if (link.getHash() != '') {
+							this.scrollToElement = link.getHash();
+						}
+
+						// get custom transition from data
+						var customTransition = event.delegateTarget.getAttribute('data-swup-transition');
+
+						// load page
+						this.loadPage({ url: link.getAddress(), customTransition: customTransition }, false);
+					}
+				}
+			} else {
+				// open in new tab (do nothing)
+				this.triggerEvent('openPageInNewTab', event);
+			}
+		}
+	}, {
+		key: 'popStateHandler',
+		value: function popStateHandler(event) {
+			if (this.options.skipPopStateHandling(event)) return;
+			var link = new _helpers.Link(event.state ? event.state.url : window.location.pathname);
+			if (link.getHash() !== '') {
+				this.scrollToElement = link.getHash();
+			} else {
+				event.preventDefault();
+			}
+			this.triggerEvent('popState', event);
+			this.loadPage({ url: link.getAddress() }, event);
+		}
+	}]);
+
+	return Swup;
+}();
+
+exports.default = Swup;
+
+/***/ }),
+
+/***/ "./node_modules/swup/lib/modules/Cache.js":
+/*!************************************************!*\
+  !*** ./node_modules/swup/lib/modules/Cache.js ***!
+  \************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+	value: true
+});
+
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+var Cache = exports.Cache = function () {
+	function Cache() {
+		_classCallCheck(this, Cache);
+
+		this.pages = {};
+		this.last = null;
+	}
+
+	_createClass(Cache, [{
+		key: 'cacheUrl',
+		value: function cacheUrl(page) {
+			if (page.url in this.pages === false) {
+				this.pages[page.url] = page;
+			}
+			this.last = this.pages[page.url];
+			this.swup.log('Cache (' + Object.keys(this.pages).length + ')', this.pages);
+		}
+	}, {
+		key: 'getPage',
+		value: function getPage(url) {
+			return this.pages[url];
+		}
+	}, {
+		key: 'getCurrentPage',
+		value: function getCurrentPage() {
+			return this.getPage(window.location.pathname + window.location.search);
+		}
+	}, {
+		key: 'exists',
+		value: function exists(url) {
+			return url in this.pages;
+		}
+	}, {
+		key: 'empty',
+		value: function empty() {
+			this.pages = {};
+			this.last = null;
+			this.swup.log('Cache cleared');
+		}
+	}, {
+		key: 'remove',
+		value: function remove(url) {
+			delete this.pages[url];
+		}
+	}]);
+
+	return Cache;
+}();
+
+exports.default = Cache;
+
+/***/ }),
+
+/***/ "./node_modules/swup/lib/modules/getAnimationPromises.js":
+/*!***************************************************************!*\
+  !*** ./node_modules/swup/lib/modules/getAnimationPromises.js ***!
+  \***************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+	value: true
+});
+
+var _utils = __webpack_require__(/*! ../utils */ "./node_modules/swup/lib/utils/index.js");
+
+var _helpers = __webpack_require__(/*! ../helpers */ "./node_modules/swup/lib/helpers/index.js");
+
+var getAnimationPromises = function getAnimationPromises() {
+	var promises = [];
+	var animatedElements = (0, _utils.queryAll)(this.options.animationSelector);
+	animatedElements.forEach(function (element) {
+		var promise = new Promise(function (resolve) {
+			element.addEventListener((0, _helpers.transitionEnd)(), function (event) {
+				if (element == event.target) {
+					resolve();
+				}
+			});
+		});
+		promises.push(promise);
+	});
+	return promises;
+};
+
+exports.default = getAnimationPromises;
+
+/***/ }),
+
+/***/ "./node_modules/swup/lib/modules/getPageData.js":
+/*!******************************************************!*\
+  !*** ./node_modules/swup/lib/modules/getPageData.js ***!
+  \******************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+	value: true
+});
+
+var _helpers = __webpack_require__(/*! ../helpers */ "./node_modules/swup/lib/helpers/index.js");
+
+var getPageData = function getPageData(request) {
+	// this method can be replaced in case other content than html is expected to be received from server
+	// this function should always return {title, pageClass, originalContent, blocks, responseURL}
+	// in case page has invalid structure - return null
+	var html = request.responseText;
+	var pageObject = (0, _helpers.getDataFromHtml)(html, this.options.containers);
+
+	if (pageObject) {
+		pageObject.responseURL = request.responseURL ? request.responseURL : window.location.href;
+	} else {
+		console.warn('Received page is invalid.');
+		return null;
+	}
+
+	return pageObject;
+};
+
+exports.default = getPageData;
+
+/***/ }),
+
+/***/ "./node_modules/swup/lib/modules/loadPage.js":
+/*!***************************************************!*\
+  !*** ./node_modules/swup/lib/modules/loadPage.js ***!
+  \***************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+	value: true
+});
+
+var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
+
+var _helpers = __webpack_require__(/*! ../helpers */ "./node_modules/swup/lib/helpers/index.js");
+
+var loadPage = function loadPage(data, popstate) {
+	var _this = this;
+
+	// create array for storing animation promises
+	var animationPromises = [],
+	    xhrPromise = void 0;
+	var animateOut = function animateOut() {
+		_this.triggerEvent('animationOutStart');
+
+		// handle classes
+		document.documentElement.classList.add('is-changing');
+		document.documentElement.classList.add('is-leaving');
+		document.documentElement.classList.add('is-animating');
+		if (popstate) {
+			document.documentElement.classList.add('is-popstate');
+		}
+		document.documentElement.classList.add('to-' + (0, _helpers.classify)(data.url));
+
+		// animation promise stuff
+		animationPromises = _this.getAnimationPromises('out');
+		Promise.all(animationPromises).then(function () {
+			_this.triggerEvent('animationOutDone');
+		});
+
+		// create history record if this is not a popstate call
+		if (!popstate) {
+			// create pop element with or without anchor
+			var state = void 0;
+			if (_this.scrollToElement != null) {
+				state = data.url + _this.scrollToElement;
+			} else {
+				state = data.url;
+			}
+
+			(0, _helpers.createHistoryRecord)(state);
+		}
+	};
+
+	this.triggerEvent('transitionStart', popstate);
+
+	// set transition object
+	if (data.customTransition != null) {
+		this.updateTransition(window.location.pathname, data.url, data.customTransition);
+		document.documentElement.classList.add('to-' + (0, _helpers.classify)(data.customTransition));
+	} else {
+		this.updateTransition(window.location.pathname, data.url);
+	}
+
+	// start/skip animation
+	if (!popstate || this.options.animateHistoryBrowsing) {
+		animateOut();
+	} else {
+		this.triggerEvent('animationSkipped');
+	}
+
+	// start/skip loading of page
+	if (this.cache.exists(data.url)) {
+		xhrPromise = new Promise(function (resolve) {
+			resolve();
+		});
+		this.triggerEvent('pageRetrievedFromCache');
+	} else {
+		if (!this.preloadPromise || this.preloadPromise.route != data.url) {
+			xhrPromise = new Promise(function (resolve, reject) {
+				(0, _helpers.fetch)(_extends({}, data, { headers: _this.options.requestHeaders }), function (response) {
+					if (response.status === 500) {
+						_this.triggerEvent('serverError');
+						reject(data.url);
+						return;
+					} else {
+						// get json data
+						var page = _this.getPageData(response);
+						if (page != null) {
+							page.url = data.url;
+						} else {
+							reject(data.url);
+							return;
+						}
+						// render page
+						_this.cache.cacheUrl(page);
+						_this.triggerEvent('pageLoaded');
+					}
+					resolve();
+				});
+			});
+		} else {
+			xhrPromise = this.preloadPromise;
+		}
+	}
+
+	// when everything is ready, handle the outcome
+	Promise.all(animationPromises.concat([xhrPromise])).then(function () {
+		// render page
+		_this.renderPage(_this.cache.getPage(data.url), popstate);
+		_this.preloadPromise = null;
+	}).catch(function (errorUrl) {
+		// rewrite the skipPopStateHandling function to redirect manually when the history.go is processed
+		_this.options.skipPopStateHandling = function () {
+			window.location = errorUrl;
+			return true;
+		};
+
+		// go back to the actual page were still at
+		window.history.go(-1);
+	});
+};
+
+exports.default = loadPage;
+
+/***/ }),
+
+/***/ "./node_modules/swup/lib/modules/off.js":
+/*!**********************************************!*\
+  !*** ./node_modules/swup/lib/modules/off.js ***!
+  \**********************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+	value: true
+});
+var off = function off(event, handler) {
+	var _this = this;
+
+	if (event != null) {
+		if (handler != null) {
+			if (this._handlers[event] && this._handlers[event].filter(function (savedHandler) {
+				return savedHandler === handler;
+			}).length) {
+				var toRemove = this._handlers[event].filter(function (savedHandler) {
+					return savedHandler === handler;
+				})[0];
+				var index = this._handlers[event].indexOf(toRemove);
+				if (index > -1) {
+					this._handlers[event].splice(index, 1);
+				}
+			} else {
+				console.warn("Handler for event '" + event + "' no found.");
+			}
+		} else {
+			this._handlers[event] = [];
+		}
+	} else {
+		Object.keys(this._handlers).forEach(function (keys) {
+			_this._handlers[keys] = [];
+		});
+	}
+};
+
+exports.default = off;
+
+/***/ }),
+
+/***/ "./node_modules/swup/lib/modules/on.js":
+/*!*********************************************!*\
+  !*** ./node_modules/swup/lib/modules/on.js ***!
+  \*********************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+	value: true
+});
+var on = function on(event, handler) {
+	if (this._handlers[event]) {
+		this._handlers[event].push(handler);
+	} else {
+		console.warn("Unsupported event " + event + ".");
+	}
+};
+
+exports.default = on;
+
+/***/ }),
+
+/***/ "./node_modules/swup/lib/modules/plugins.js":
+/*!**************************************************!*\
+  !*** ./node_modules/swup/lib/modules/plugins.js ***!
+  \**************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+	value: true
+});
+var use = exports.use = function use(plugin) {
+	if (!plugin.isSwupPlugin) {
+		console.warn('Not swup plugin instance ' + plugin + '.');
+		return;
+	}
+
+	this.plugins.push(plugin);
+	plugin.swup = this;
+	if (typeof plugin._beforeMount === 'function') {
+		plugin._beforeMount();
+	}
+	plugin.mount();
+
+	return this.plugins;
+};
+
+var unuse = exports.unuse = function unuse(plugin) {
+	var pluginReference = void 0;
+
+	if (typeof plugin === 'string') {
+		pluginReference = this.plugins.find(function (p) {
+			return plugin === p.name;
+		});
+	} else {
+		pluginReference = plugin;
+	}
+
+	if (!pluginReference) {
+		console.warn('No such plugin.');
+		return;
+	}
+
+	pluginReference.unmount();
+
+	if (typeof pluginReference._afterUnmount === 'function') {
+		pluginReference._afterUnmount();
+	}
+
+	var index = this.plugins.indexOf(pluginReference);
+	this.plugins.splice(index, 1);
+
+	return this.plugins;
+};
+
+var findPlugin = exports.findPlugin = function findPlugin(pluginName) {
+	return this.plugins.find(function (p) {
+		return pluginName === p.name;
+	});
+};
+
+/***/ }),
+
+/***/ "./node_modules/swup/lib/modules/renderPage.js":
+/*!*****************************************************!*\
+  !*** ./node_modules/swup/lib/modules/renderPage.js ***!
+  \*****************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+	value: true
+});
+
+var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
+
+var _utils = __webpack_require__(/*! ../utils */ "./node_modules/swup/lib/utils/index.js");
+
+var _helpers = __webpack_require__(/*! ../helpers */ "./node_modules/swup/lib/helpers/index.js");
+
+var renderPage = function renderPage(page, popstate) {
+	var _this = this;
+
+	document.documentElement.classList.remove('is-leaving');
+
+	// replace state in case the url was redirected
+	var link = new _helpers.Link(page.responseURL);
+	if (window.location.pathname !== link.getPath()) {
+		window.history.replaceState({
+			url: link.getPath(),
+			random: Math.random(),
+			source: 'swup'
+		}, document.title, link.getPath());
+
+		// save new record for redirected url
+		this.cache.cacheUrl(_extends({}, page, { url: link.getPath() }));
+	}
+
+	// only add for non-popstate transitions
+	if (!popstate || this.options.animateHistoryBrowsing) {
+		document.documentElement.classList.add('is-rendering');
+	}
+
+	this.triggerEvent('willReplaceContent', popstate);
+
+	// replace blocks
+	for (var i = 0; i < page.blocks.length; i++) {
+		document.body.querySelector('[data-swup="' + i + '"]').outerHTML = page.blocks[i];
+	}
+
+	// set title
+	document.title = page.title;
+
+	this.triggerEvent('contentReplaced', popstate);
+	this.triggerEvent('pageView', popstate);
+
+	// empty cache if it's disabled (because pages could be preloaded and stuff)
+	if (!this.options.cache) {
+		this.cache.empty();
+	}
+
+	// start animation IN
+	setTimeout(function () {
+		if (!popstate || _this.options.animateHistoryBrowsing) {
+			_this.triggerEvent('animationInStart');
+			document.documentElement.classList.remove('is-animating');
+		}
+	}, 10);
+
+	// handle end of animation
+	var animationPromises = this.getAnimationPromises('in');
+	if (!popstate || this.options.animateHistoryBrowsing) {
+		Promise.all(animationPromises).then(function () {
+			_this.triggerEvent('animationInDone');
+			_this.triggerEvent('transitionEnd', popstate);
+			// remove "to-{page}" classes
+			document.documentElement.className.split(' ').forEach(function (classItem) {
+				if (new RegExp('^to-').test(classItem) || classItem === 'is-changing' || classItem === 'is-rendering' || classItem === 'is-popstate') {
+					document.documentElement.classList.remove(classItem);
+				}
+			});
+		});
+	} else {
+		this.triggerEvent('transitionEnd', popstate);
+	}
+
+	// reset scroll-to element
+	this.scrollToElement = null;
+};
+
+exports.default = renderPage;
+
+/***/ }),
+
+/***/ "./node_modules/swup/lib/modules/triggerEvent.js":
+/*!*******************************************************!*\
+  !*** ./node_modules/swup/lib/modules/triggerEvent.js ***!
+  \*******************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+	value: true
+});
+var triggerEvent = function triggerEvent(eventName, originalEvent) {
+	// call saved handlers with "on" method and pass originalEvent object if available
+	this._handlers[eventName].forEach(function (handler) {
+		try {
+			handler(originalEvent);
+		} catch (error) {
+			console.error(error);
+		}
+	});
+
+	// trigger event on document with prefix "swup:"
+	var event = new CustomEvent('swup:' + eventName, { detail: eventName });
+	document.dispatchEvent(event);
+};
+
+exports.default = triggerEvent;
+
+/***/ }),
+
+/***/ "./node_modules/swup/lib/modules/updateTransition.js":
+/*!***********************************************************!*\
+  !*** ./node_modules/swup/lib/modules/updateTransition.js ***!
+  \***********************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+	value: true
+});
+var updateTransition = function updateTransition(from, to, custom) {
+	// transition routes
+	this.transition = {
+		from: from,
+		to: to,
+		custom: custom
+	};
+};
+
+exports.default = updateTransition;
+
+/***/ }),
+
+/***/ "./node_modules/swup/lib/utils/index.js":
+/*!**********************************************!*\
+  !*** ./node_modules/swup/lib/utils/index.js ***!
+  \**********************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+	value: true
+});
+var query = exports.query = function query(selector) {
+	var context = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : document;
+
+	if (typeof selector !== 'string') {
+		return selector;
+	}
+
+	return context.querySelector(selector);
+};
+
+var queryAll = exports.queryAll = function queryAll(selector) {
+	var context = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : document;
+
+	if (typeof selector !== 'string') {
+		return selector;
+	}
+
+	return Array.prototype.slice.call(context.querySelectorAll(selector));
+};
+
+/***/ }),
+
+/***/ "./resources/js/app.js":
+/*!*****************************!*\
+  !*** ./resources/js/app.js ***!
+  \*****************************/
+/*! no exports provided */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var swup__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! swup */ "./node_modules/swup/lib/index.js");
+/* harmony import */ var swup__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(swup__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _swup_scroll_plugin__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @swup/scroll-plugin */ "./node_modules/@swup/scroll-plugin/lib/index.js");
+/* harmony import */ var _swup_scroll_plugin__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_swup_scroll_plugin__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var _swup_head_plugin__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @swup/head-plugin */ "./node_modules/@swup/head-plugin/lib/index.js");
+/* harmony import */ var _swup_head_plugin__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(_swup_head_plugin__WEBPACK_IMPORTED_MODULE_2__);
+/* harmony import */ var _swup_preload_plugin__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @swup/preload-plugin */ "./node_modules/@swup/preload-plugin/lib/index.js");
+/* harmony import */ var _swup_preload_plugin__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(_swup_preload_plugin__WEBPACK_IMPORTED_MODULE_3__);
+
+
+
+
+var swup = new swup__WEBPACK_IMPORTED_MODULE_0___default.a({
+  containers: ['#swup'],
+  plugins: [new _swup_scroll_plugin__WEBPACK_IMPORTED_MODULE_1___default.a({
+    animateScroll: false
+  }), new _swup_head_plugin__WEBPACK_IMPORTED_MODULE_2___default.a(), new _swup_preload_plugin__WEBPACK_IMPORTED_MODULE_3___default.a()]
+});
+var compo = null;
+var studio = null;
+
+function compoEnter() {
+  compo.classList.add("large");
+  studio.classList.add("small");
+}
+
+function studioEnter() {
+  studio.classList.add("large");
+  compo.classList.add("small");
+}
+
+function compoLeave() {
+  compo.classList.remove("large");
+  studio.classList.remove("small");
+}
+
+function studioLeave() {
+  studio.classList.remove("large");
+  compo.classList.remove("small");
+}
+
+function mount() {
+  compo = document.getElementById("compo");
+  studio = document.getElementById("studio");
+
+  if (compo) {
+    compo.addEventListener("mouseenter", compoEnter);
+    compo.addEventListener("mouseleave", compoLeave);
+  }
+
+  if (studio) {
+    studio.addEventListener("mouseenter", studioEnter);
+    studio.addEventListener("mouseleave", studioLeave);
+  }
+
+  console.log("mount");
+}
+
+function unmount() {
+  if (compo) {
+    compo.removeEventListener("mouseenter", compoEnter);
+    compo.removeEventListener("mouseleave", compoLeave);
+  }
+
+  if (studio) {
+    studio.removeEventListener("mouseenter", studioEnter);
+    studio.removeEventListener("mouseleave", studioLeave);
+  }
+
+  compo = null;
+  studio = null;
+}
+
+mount();
+swup.on('contentReplaced', mount);
+swup.on('willReplaceContent', unmount); // swup.on('pagePreloaded', function () {
+//     console.log('preload');
+// });
+
+/***/ }),
+
+/***/ "./resources/js/modernizr-custom.js":
+/*!******************************************!*\
+  !*** ./resources/js/modernizr-custom.js ***!
+  \******************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
+
+/*!
+ * modernizr v3.6.0
+ * Build https://modernizr.com/download?-webp-setclasses-dontmin
+ *
+ * Copyright (c)
+ *  Faruk Ates
+ *  Paul Irish
+ *  Alex Sexton
+ *  Ryan Seddon
+ *  Patrick Kettner
+ *  Stu Cox
+ *  Richard Herrera
+
+ * MIT License
+ */
+
+/*
+ * Modernizr tests which native CSS3 and HTML5 features are available in the
+ * current UA and makes the results available to you in two ways: as properties on
+ * a global `Modernizr` object, and as classes on the `<html>` element. This
+ * information allows you to progressively enhance your pages with a granular level
+ * of control over the experience.
+*/
+;
+
+(function (window, document, undefined) {
+  var classes = [];
+  var tests = [];
+  /**
+   *
+   * ModernizrProto is the constructor for Modernizr
+   *
+   * @class
+   * @access public
+   */
+
+  var ModernizrProto = {
+    // The current version, dummy
+    _version: '3.6.0',
+    // Any settings that don't work as separate modules
+    // can go in here as configuration.
+    _config: {
+      'classPrefix': '',
+      'enableClasses': true,
+      'enableJSClass': true,
+      'usePrefixes': true
+    },
+    // Queue of tests
+    _q: [],
+    // Stub these for people who are listening
+    on: function on(test, cb) {
+      // I don't really think people should do this, but we can
+      // safe guard it a bit.
+      // -- NOTE:: this gets WAY overridden in src/addTest for actual async tests.
+      // This is in case people listen to synchronous tests. I would leave it out,
+      // but the code to *disallow* sync tests in the real version of this
+      // function is actually larger than this.
+      var self = this;
+      setTimeout(function () {
+        cb(self[test]);
+      }, 0);
+    },
+    addTest: function addTest(name, fn, options) {
+      tests.push({
+        name: name,
+        fn: fn,
+        options: options
+      });
+    },
+    addAsyncTest: function addAsyncTest(fn) {
+      tests.push({
+        name: null,
+        fn: fn
+      });
+    }
+  }; // Fake some of Object.create so we can force non test results to be non "own" properties.
+
+  var Modernizr = function Modernizr() {};
+
+  Modernizr.prototype = ModernizrProto; // Leak modernizr globally when you `require` it rather than force it here.
+  // Overwrite name so constructor name is nicer :D
+
+  Modernizr = new Modernizr();
+  /**
+   * is returns a boolean if the typeof an obj is exactly type.
+   *
+   * @access private
+   * @function is
+   * @param {*} obj - A thing we want to check the type of
+   * @param {string} type - A string to compare the typeof against
+   * @returns {boolean}
+   */
+
+  function is(obj, type) {
+    return _typeof(obj) === type;
+  }
+
+  ;
+  /**
+   * Run through all tests and detect their support in the current UA.
+   *
+   * @access private
+   */
+
+  function testRunner() {
+    var featureNames;
+    var feature;
+    var aliasIdx;
+    var result;
+    var nameIdx;
+    var featureName;
+    var featureNameSplit;
+
+    for (var featureIdx in tests) {
+      if (tests.hasOwnProperty(featureIdx)) {
+        featureNames = [];
+        feature = tests[featureIdx]; // run the test, throw the return value into the Modernizr,
+        // then based on that boolean, define an appropriate className
+        // and push it into an array of classes we'll join later.
+        //
+        // If there is no name, it's an 'async' test that is run,
+        // but not directly added to the object. That should
+        // be done with a post-run addTest call.
+
+        if (feature.name) {
+          featureNames.push(feature.name.toLowerCase());
+
+          if (feature.options && feature.options.aliases && feature.options.aliases.length) {
+            // Add all the aliases into the names list
+            for (aliasIdx = 0; aliasIdx < feature.options.aliases.length; aliasIdx++) {
+              featureNames.push(feature.options.aliases[aliasIdx].toLowerCase());
+            }
+          }
+        } // Run the test, or use the raw value if it's not a function
+
+
+        result = is(feature.fn, 'function') ? feature.fn() : feature.fn; // Set each of the names on the Modernizr object
+
+        for (nameIdx = 0; nameIdx < featureNames.length; nameIdx++) {
+          featureName = featureNames[nameIdx]; // Support dot properties as sub tests. We don't do checking to make sure
+          // that the implied parent tests have been added. You must call them in
+          // order (either in the test, or make the parent test a dependency).
+          //
+          // Cap it to TWO to make the logic simple and because who needs that kind of subtesting
+          // hashtag famous last words
+
+          featureNameSplit = featureName.split('.');
+
+          if (featureNameSplit.length === 1) {
+            Modernizr[featureNameSplit[0]] = result;
+          } else {
+            // cast to a Boolean, if not one already
+            if (Modernizr[featureNameSplit[0]] && !(Modernizr[featureNameSplit[0]] instanceof Boolean)) {
+              Modernizr[featureNameSplit[0]] = new Boolean(Modernizr[featureNameSplit[0]]);
+            }
+
+            Modernizr[featureNameSplit[0]][featureNameSplit[1]] = result;
+          }
+
+          classes.push((result ? '' : 'no-') + featureNameSplit.join('-'));
+        }
+      }
+    }
+  }
+
+  ;
+  /**
+   * docElement is a convenience wrapper to grab the root element of the document
+   *
+   * @access private
+   * @returns {HTMLElement|SVGElement} The root element of the document
+   */
+
+  var docElement = document.documentElement;
+  /**
+   * A convenience helper to check if the document we are running in is an SVG document
+   *
+   * @access private
+   * @returns {boolean}
+   */
+
+  var isSVG = docElement.nodeName.toLowerCase() === 'svg';
+  /**
+   * setClasses takes an array of class names and adds them to the root element
+   *
+   * @access private
+   * @function setClasses
+   * @param {string[]} classes - Array of class names
+   */
+  // Pass in an and array of class names, e.g.:
+  //  ['no-webp', 'borderradius', ...]
+
+  function setClasses(classes) {
+    var className = docElement.className;
+    var classPrefix = Modernizr._config.classPrefix || '';
+
+    if (isSVG) {
+      className = className.baseVal;
+    } // Change `no-js` to `js` (independently of the `enableClasses` option)
+    // Handle classPrefix on this too
+
+
+    if (Modernizr._config.enableJSClass) {
+      var reJS = new RegExp('(^|\\s)' + classPrefix + 'no-js(\\s|$)');
+      className = className.replace(reJS, '$1' + classPrefix + 'js$2');
+    }
+
+    if (Modernizr._config.enableClasses) {
+      // Add the new classes
+      className += ' ' + classPrefix + classes.join(' ' + classPrefix);
+
+      if (isSVG) {
+        docElement.className.baseVal = className;
+      } else {
+        docElement.className = className;
+      }
+    }
+  }
+
+  ;
+  /**
+   * hasOwnProp is a shim for hasOwnProperty that is needed for Safari 2.0 support
+   *
+   * @author kangax
+   * @access private
+   * @function hasOwnProp
+   * @param {object} object - The object to check for a property
+   * @param {string} property - The property to check for
+   * @returns {boolean}
+   */
+  // hasOwnProperty shim by kangax needed for Safari 2.0 support
+
+  var hasOwnProp;
+
+  (function () {
+    var _hasOwnProperty = {}.hasOwnProperty;
+    /* istanbul ignore else */
+
+    /* we have no way of testing IE 5.5 or safari 2,
+     * so just assume the else gets hit */
+
+    if (!is(_hasOwnProperty, 'undefined') && !is(_hasOwnProperty.call, 'undefined')) {
+      hasOwnProp = function hasOwnProp(object, property) {
+        return _hasOwnProperty.call(object, property);
+      };
+    } else {
+      hasOwnProp = function hasOwnProp(object, property) {
+        /* yes, this can give false positives/negatives, but most of the time we don't care about those */
+        return property in object && is(object.constructor.prototype[property], 'undefined');
+      };
+    }
+  })(); // _l tracks listeners for async tests, as well as tests that execute after the initial run
+
+
+  ModernizrProto._l = {};
+  /**
+   * Modernizr.on is a way to listen for the completion of async tests. Being
+   * asynchronous, they may not finish before your scripts run. As a result you
+   * will get a possibly false negative `undefined` value.
+   *
+   * @memberof Modernizr
+   * @name Modernizr.on
+   * @access public
+   * @function on
+   * @param {string} feature - String name of the feature detect
+   * @param {function} cb - Callback function returning a Boolean - true if feature is supported, false if not
+   * @example
+   *
+   * ```js
+   * Modernizr.on('flash', function( result ) {
+   *   if (result) {
+   *    // the browser has flash
+   *   } else {
+   *     // the browser does not have flash
+   *   }
+   * });
+   * ```
+   */
+
+  ModernizrProto.on = function (feature, cb) {
+    // Create the list of listeners if it doesn't exist
+    if (!this._l[feature]) {
+      this._l[feature] = [];
+    } // Push this test on to the listener list
+
+
+    this._l[feature].push(cb); // If it's already been resolved, trigger it on next tick
+
+
+    if (Modernizr.hasOwnProperty(feature)) {
+      // Next Tick
+      setTimeout(function () {
+        Modernizr._trigger(feature, Modernizr[feature]);
+      }, 0);
+    }
+  };
+  /**
+   * _trigger is the private function used to signal test completion and run any
+   * callbacks registered through [Modernizr.on](#modernizr-on)
+   *
+   * @memberof Modernizr
+   * @name Modernizr._trigger
+   * @access private
+   * @function _trigger
+   * @param {string} feature - string name of the feature detect
+   * @param {function|boolean} [res] - A feature detection function, or the boolean =
+   * result of a feature detection function
+   */
+
+
+  ModernizrProto._trigger = function (feature, res) {
+    if (!this._l[feature]) {
+      return;
+    }
+
+    var cbs = this._l[feature]; // Force async
+
+    setTimeout(function () {
+      var i, cb;
+
+      for (i = 0; i < cbs.length; i++) {
+        cb = cbs[i];
+        cb(res);
+      }
+    }, 0); // Don't trigger these again
+
+    delete this._l[feature];
+  };
+  /**
+   * addTest allows you to define your own feature detects that are not currently
+   * included in Modernizr (under the covers it's the exact same code Modernizr
+   * uses for its own [feature detections](https://github.com/Modernizr/Modernizr/tree/master/feature-detects)). Just like the offical detects, the result
+   * will be added onto the Modernizr object, as well as an appropriate className set on
+   * the html element when configured to do so
+   *
+   * @memberof Modernizr
+   * @name Modernizr.addTest
+   * @optionName Modernizr.addTest()
+   * @optionProp addTest
+   * @access public
+   * @function addTest
+   * @param {string|object} feature - The string name of the feature detect, or an
+   * object of feature detect names and test
+   * @param {function|boolean} test - Function returning true if feature is supported,
+   * false if not. Otherwise a boolean representing the results of a feature detection
+   * @example
+   *
+   * The most common way of creating your own feature detects is by calling
+   * `Modernizr.addTest` with a string (preferably just lowercase, without any
+   * punctuation), and a function you want executed that will return a boolean result
+   *
+   * ```js
+   * Modernizr.addTest('itsTuesday', function() {
+   *  var d = new Date();
+   *  return d.getDay() === 2;
+   * });
+   * ```
+   *
+   * When the above is run, it will set Modernizr.itstuesday to `true` when it is tuesday,
+   * and to `false` every other day of the week. One thing to notice is that the names of
+   * feature detect functions are always lowercased when added to the Modernizr object. That
+   * means that `Modernizr.itsTuesday` will not exist, but `Modernizr.itstuesday` will.
+   *
+   *
+   *  Since we only look at the returned value from any feature detection function,
+   *  you do not need to actually use a function. For simple detections, just passing
+   *  in a statement that will return a boolean value works just fine.
+   *
+   * ```js
+   * Modernizr.addTest('hasJquery', 'jQuery' in window);
+   * ```
+   *
+   * Just like before, when the above runs `Modernizr.hasjquery` will be true if
+   * jQuery has been included on the page. Not using a function saves a small amount
+   * of overhead for the browser, as well as making your code much more readable.
+   *
+   * Finally, you also have the ability to pass in an object of feature names and
+   * their tests. This is handy if you want to add multiple detections in one go.
+   * The keys should always be a string, and the value can be either a boolean or
+   * function that returns a boolean.
+   *
+   * ```js
+   * var detects = {
+   *  'hasjquery': 'jQuery' in window,
+   *  'itstuesday': function() {
+   *    var d = new Date();
+   *    return d.getDay() === 2;
+   *  }
+   * }
+   *
+   * Modernizr.addTest(detects);
+   * ```
+   *
+   * There is really no difference between the first methods and this one, it is
+   * just a convenience to let you write more readable code.
+   */
+
+
+  function addTest(feature, test) {
+    if (_typeof(feature) == 'object') {
+      for (var key in feature) {
+        if (hasOwnProp(feature, key)) {
+          addTest(key, feature[key]);
+        }
+      }
+    } else {
+      feature = feature.toLowerCase();
+      var featureNameSplit = feature.split('.');
+      var last = Modernizr[featureNameSplit[0]]; // Again, we don't check for parent test existence. Get that right, though.
+
+      if (featureNameSplit.length == 2) {
+        last = last[featureNameSplit[1]];
+      }
+
+      if (typeof last != 'undefined') {
+        // we're going to quit if you're trying to overwrite an existing test
+        // if we were to allow it, we'd do this:
+        //   var re = new RegExp("\\b(no-)?" + feature + "\\b");
+        //   docElement.className = docElement.className.replace( re, '' );
+        // but, no rly, stuff 'em.
+        return Modernizr;
+      }
+
+      test = typeof test == 'function' ? test() : test; // Set the value (this is the magic, right here).
+
+      if (featureNameSplit.length == 1) {
+        Modernizr[featureNameSplit[0]] = test;
+      } else {
+        // cast to a Boolean, if not one already
+        if (Modernizr[featureNameSplit[0]] && !(Modernizr[featureNameSplit[0]] instanceof Boolean)) {
+          Modernizr[featureNameSplit[0]] = new Boolean(Modernizr[featureNameSplit[0]]);
+        }
+
+        Modernizr[featureNameSplit[0]][featureNameSplit[1]] = test;
+      } // Set a single class (either `feature` or `no-feature`)
+
+
+      setClasses([(!!test && test != false ? '' : 'no-') + featureNameSplit.join('-')]); // Trigger the event
+
+      Modernizr._trigger(feature, test);
+    }
+
+    return Modernizr; // allow chaining.
+  } // After all the tests are run, add self to the Modernizr prototype
+
+
+  Modernizr._q.push(function () {
+    ModernizrProto.addTest = addTest;
+  });
+  /*!
+  {
+    "name": "Webp",
+    "async": true,
+    "property": "webp",
+    "tags": ["image"],
+    "builderAliases": ["img_webp"],
+    "authors": ["Krister Kari", "@amandeep", "Rich Bradshaw", "Ryan Seddon", "Paul Irish"],
+    "notes": [{
+      "name": "Webp Info",
+      "href": "https://developers.google.com/speed/webp/"
+    }, {
+      "name": "Chormium blog - Chrome 32 Beta: Animated WebP images and faster Chrome for Android touch input",
+      "href": "https://blog.chromium.org/2013/11/chrome-32-beta-animated-webp-images-and.html"
+    }, {
+      "name": "Webp Lossless Spec",
+      "href": "https://developers.google.com/speed/webp/docs/webp_lossless_bitstream_specification"
+    }, {
+      "name": "Article about WebP support on Android browsers",
+      "href": "http://www.wope-framework.com/en/2013/06/24/webp-support-on-android-browsers/"
+    }, {
+      "name": "Chormium WebP announcement",
+      "href": "https://blog.chromium.org/2011/11/lossless-and-transparency-encoding-in.html?m=1"
+    }]
+  }
+  !*/
+
+  /* DOC
+  Tests for lossy, non-alpha webp support.
+  
+  Tests for all forms of webp support (lossless, lossy, alpha, and animated)..
+  
+    Modernizr.webp              // Basic support (lossy)
+    Modernizr.webp.lossless     // Lossless
+    Modernizr.webp.alpha        // Alpha (both lossy and lossless)
+    Modernizr.webp.animation    // Animated WebP
+  
+  */
+
+
+  Modernizr.addAsyncTest(function () {
+    var webpTests = [{
+      'uri': 'data:image/webp;base64,UklGRiQAAABXRUJQVlA4IBgAAAAwAQCdASoBAAEAAwA0JaQAA3AA/vuUAAA=',
+      'name': 'webp'
+    }, {
+      'uri': 'data:image/webp;base64,UklGRkoAAABXRUJQVlA4WAoAAAAQAAAAAAAAAAAAQUxQSAwAAAABBxAR/Q9ERP8DAABWUDggGAAAADABAJ0BKgEAAQADADQlpAADcAD++/1QAA==',
+      'name': 'webp.alpha'
+    }, {
+      'uri': 'data:image/webp;base64,UklGRlIAAABXRUJQVlA4WAoAAAASAAAAAAAAAAAAQU5JTQYAAAD/////AABBTk1GJgAAAAAAAAAAAAAAAAAAAGQAAABWUDhMDQAAAC8AAAAQBxAREYiI/gcA',
+      'name': 'webp.animation'
+    }, {
+      'uri': 'data:image/webp;base64,UklGRh4AAABXRUJQVlA4TBEAAAAvAAAAAAfQ//73v/+BiOh/AAA=',
+      'name': 'webp.lossless'
+    }];
+    var webp = webpTests.shift();
+
+    function test(name, uri, cb) {
+      var image = new Image();
+
+      function addResult(event) {
+        // if the event is from 'onload', check the see if the image's width is
+        // 1 pixel (which indiciates support). otherwise, it fails
+        var result = event && event.type === 'load' ? image.width == 1 : false;
+        var baseTest = name === 'webp'; // if it is the base test, and the result is false, just set a literal false
+        // rather than use the Boolean contrsuctor
+
+        addTest(name, baseTest && result ? new Boolean(result) : result);
+
+        if (cb) {
+          cb(event);
+        }
+      }
+
+      image.onerror = addResult;
+      image.onload = addResult;
+      image.src = uri;
+    } // test for webp support in general
+
+
+    test(webp.name, webp.uri, function (e) {
+      // if the webp test loaded, test everything else.
+      if (e && e.type === 'load') {
+        for (var i = 0; i < webpTests.length; i++) {
+          test(webpTests[i].name, webpTests[i].uri);
+        }
+      }
+    });
+  }); // Run each test
+
+  testRunner(); // Remove the "no-js" class if it exists
+
+  setClasses(classes);
+  delete ModernizrProto.addTest;
+  delete ModernizrProto.addAsyncTest; // Run the things that are supposed to run after the tests
+
+  for (var i = 0; i < Modernizr._q.length; i++) {
+    Modernizr._q[i]();
+  } // Leak Modernizr namespace
+
+
+  window.Modernizr = Modernizr;
+  ;
+})(window, document);
+
+/***/ }),
+
+/***/ "./resources/sass/common.scss":
+/*!************************************!*\
+  !*** ./resources/sass/common.scss ***!
+  \************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+// removed by extract-text-webpack-plugin
+
+/***/ }),
+
+/***/ "./resources/sass/compo.scss":
+/*!***********************************!*\
+  !*** ./resources/sass/compo.scss ***!
+  \***********************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+// removed by extract-text-webpack-plugin
+
+/***/ }),
+
+/***/ "./resources/sass/studio.scss":
+/*!************************************!*\
+  !*** ./resources/sass/studio.scss ***!
+  \************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+// removed by extract-text-webpack-plugin
+
+/***/ }),
+
+/***/ 0:
+/*!************************************************************************************************************************************************************!*\
+  !*** multi ./resources/js/app.js ./resources/js/modernizr-custom.js ./resources/sass/common.scss ./resources/sass/studio.scss ./resources/sass/compo.scss ***!
+  \************************************************************************************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+__webpack_require__(/*! /home/bastien/Documents/siteApache/ideocompositeur/resources/js/app.js */"./resources/js/app.js");
+__webpack_require__(/*! /home/bastien/Documents/siteApache/ideocompositeur/resources/js/modernizr-custom.js */"./resources/js/modernizr-custom.js");
+__webpack_require__(/*! /home/bastien/Documents/siteApache/ideocompositeur/resources/sass/common.scss */"./resources/sass/common.scss");
+__webpack_require__(/*! /home/bastien/Documents/siteApache/ideocompositeur/resources/sass/studio.scss */"./resources/sass/studio.scss");
+module.exports = __webpack_require__(/*! /home/bastien/Documents/siteApache/ideocompositeur/resources/sass/compo.scss */"./resources/sass/compo.scss");
+
+
+/***/ })
+
+/******/ });

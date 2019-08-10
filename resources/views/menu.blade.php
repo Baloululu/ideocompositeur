@@ -29,11 +29,7 @@
                 </div>
             </a>
 
-            <div class="w3-col dark-red bandeau" style="width: 10%; overflow: hidden">
-                <svg height="100%" width="100%" viewBox="0 0 100 100" preserveAspectRatio="none">
-                    <polygon class="dark-grey" stroke-width=0 points="0,0 0,100 95,0" />
-                    <polygon class="light-grey" stroke-width=0 points="95,0 100,0 5,100 0,100" />
-                </svg>
+            <div class="w3-col bandeau diagonalsvg" style="width: 10%">
             </div>
 
             <a id="compo" class="w3-col w3-block" href="{{ route('compo') }}" data-swup-preload>

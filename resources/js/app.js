@@ -70,8 +70,6 @@ function unmount() {
 
     compo = null;
     studio = null;
-
-    console.log("unmount");
 }
 
 mount();

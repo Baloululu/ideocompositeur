@@ -41,50 +41,70 @@ html.is-animating .transition-fade {
 
 @media (max-width:992px){
   .theme-light-menu{
-    background-color: #f9f9f9;
+    background-color: $light-grey;
   }
 }
 
 .no-webp{
+  @media (orientation: landscape) {
     .fondMenu {
-        background-image: url("images/fonds/small/sMenu.jpg");
+      background-image: url("images/fonds/small/sMenu.jpg");
     }
+  }
+
+  @media (orientation: portrait) {
+    .fondMenu {
+      background-image: url("images/fonds/small/sMenuV.jpg");
+    }
+  }
 }
 
 .webp{
+  @media (orientation: landscape) {
     .fondMenu {
-        background-image: url("images/fonds/small/sMenu.webp");
+      background-image: url("images/fonds/small/sMenu.webp");
     }
+  }
+
+  @media (orientation: portrait) {
+    .fondMenu {
+      background-image: url("images/fonds/small/sMenuV.webp");
+    }
+  }
 }
 
 @media (min-width:$medium-min)
 {
-    .no-webp{
-        .fondMenu {
-            background-image: url("images/fonds/medium/mMenu.jpg");
-        }
+  .no-webp{
+    .fondMenu {
+      background-image: url("images/fonds/medium/mMenu.jpg");
     }
 
-    .webp{
-        .fondMenu {
-            background-image: url("images/fonds/medium/mMenu.webp");
-        }
+    .fondMenu {
+      background-image: url("images/fonds/medium/mMenu.jpg");
     }
+  }
+
+  .webp{
+    .fondMenu {
+      background-image: url("images/fonds/medium/mMenu.webp");
+    }
+  }
 }
 
 @media (min-width:$large-min)
 {
-    .no-webp{
-        .fondMenu {
-            background-image: url("images/fonds/large/lMenu.jpg");
-        }
+  .no-webp{
+    .fondMenu {
+      background-image: url("images/fonds/large/lMenu.jpg");
     }
+  }
 
-    .webp{
-        .fondMenu {
-            background-image: url("images/fonds/large/lMenu.webp");
-        }
+  .webp{
+    .fondMenu {
+      background-image: url("images/fonds/large/lMenu.webp");
     }
+  }
 }
 
 .width100{
