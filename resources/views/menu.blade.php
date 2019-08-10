@@ -5,7 +5,7 @@
 @endsection
 
 @section('content')
-    <div class="w3-display-container w3-theme-light" style="height: 10%">
+    <div class="w3-display-container" style="height: 10%">
         <div class="w3-display-middle w3-center" style="height: 100%">
             <img class="w3-padding-large" style="height: 100%" src="{{ asset('images/common/small/sIdeo_logo.png') }}" alt="Logo">
         </div>
