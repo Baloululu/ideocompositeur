@@ -9,8 +9,8 @@
     cd {{$dir}};
     git reset --hard;
     git pull;
-    chmod 777 public -R;
-    chmod 777 storage -R;
+    sudo chmod 777 public -R;
+    sudo chmod 777 storage -R;
     {{--php artisan migrate;--}}
 @endtask
 

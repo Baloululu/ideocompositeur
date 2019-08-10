@@ -7,6 +7,8 @@
     <link rel="stylesheet" href="{{ mix('css/common.css') }}" type="text/css">
     @yield('theme')
 
+    <script defer async src="{{ mix('js/app.js') }}" type="application/javascript"></script>
+
     <title>@yield('title')</title>
 </head>
 
@@ -19,7 +21,5 @@
 </div>
 
 </body>
-
-<script src="{{ mix('js/app.js') }}" type="application/javascript"></script>
 
 </html>
