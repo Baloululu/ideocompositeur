@@ -11,14 +11,8 @@
 |
 */
 
-Route::get('/', function () {
-    return view('menu');
-})->name("home");
+Route::get('/', "WebController@Menu")->name("home");
 
-Route::get('studio', function (){
-    return view('studio');
-})->name("studio");
+Route::get('studio', "WebController@Studio")->name("studio");
 
-Route::get('compo', function (){
-    return view('compo');
-})->name("compo");
+Route::get('compo', "WebController@Compo")->name("compo");

@@ -20,25 +20,8 @@
             </div>
         </div>
 
-        <div class="w3-center w3-row" style="height: 10%">
-            <a id="studio" class="w3-col w3-block" href="{{ route('studio') }}" data-swup-preload>
-                <div class="w3-display-container dark-grey bandeau">
-                    <div class="w3-container w3-display-left w3-center width100">
-                        <h4 style="margin: 0">STUDIO</h4>
-                    </div>
-                </div>
-            </a>
-
-            <div class="w3-col bandeau diagonalsvg" style="width: 10%">
-            </div>
-
-            <a id="compo" class="w3-col w3-block" href="{{ route('compo') }}" data-swup-preload>
-                <div class="w3-display-container dark-red bandeau">
-                    <div class="w3-container w3-display-left w3-center width100">
-                        <h4 style="margin: 0">MES COMPOS</h4>
-                    </div>
-                </div>
-            </a>
+        <div id="app" class="bandeau">
+            <Site-chooser></Site-chooser>
         </div>
 
     </div>

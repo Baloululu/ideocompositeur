@@ -2,6 +2,9 @@
 @import "~@fortawesome/fontawesome-free/css/solid.css";
 @import "~@fortawesome/fontawesome-free/css/brands.css";
 
+$hamburger-layer-color: white;
+@import "~hamburgers/_sass/hamburgers/hamburgers";
+
 @import "mixin";
 @import 'w3';
 @import "variables";
@@ -109,4 +112,12 @@ html.is-animating .transition-fade {
 
 .width100{
   width: 100%;
+}
+
+nav{
+    display: block;
+    position: fixed;
+    right: 0;
+    top: 15%;
+    border-bottom-left-radius: 10px;
 }
