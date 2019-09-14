@@ -1,11 +1,11 @@
-{{--@servers(['web' => 'pi@192.168.1.22 -p 222'])--}}
-@servers(['web' => 'pi@dyn.raspberrydemontbeliard.ovh -p 222'])
+@servers(['web' => 'pi@192.168.1.22 -p 222'])
+{{--@servers(['web' => 'pi@dyn.raspberrydemontbeliard.ovh -p 222'])--}}
 
 @setup
     $dir="/home/pi/ideocompositeur";
 @endsetup
 
-@task('deploy')
+@task('pull')
     cd {{$dir}};
     git reset --hard;
     git pull;
@@ -18,7 +18,18 @@
     composer update --no-dev --no-progress;
 @endtask
 
+@task('cache')
+    php artisan config:cache;
+    php artisan route:cache;
+@endtask
+
+@macro('deploy')
+    pull
+    cache
+@endmacro
+
 @macro('deploy-update')
-    deploy
+    pull
     composer
+    cache
 @endmacro
