@@ -4,7 +4,7 @@ import SwupHeadPlugin from '@swup/head-plugin';
 import SwupPreloadPlugin from '@swup/preload-plugin';
 
 const swup = new Swup({
-    containers: ['#swup'],
+    containers: ['#swup', '#chooser'],
     plugins: [
         new SwupScrollPlugin({
             animateScroll: false
@@ -16,11 +16,17 @@ const swup = new Swup({
 
 import Vue from 'vue';
 import SiteChooser from "./components/SiteChooser";
+import MenuDynamic from "./components/Menu";
 
 function mount() {
-    const app = new Vue({
+    new Vue({
         el: '#app',
         components: {SiteChooser}
+    });
+
+    new Vue({
+        el: "#menuVue",
+        components: {MenuDynamic}
     });
 }
 mount();

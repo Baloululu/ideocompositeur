@@ -6,16 +6,16 @@
 
 @section('title', 'Compositeur')
 
-@section('content')
-    <div id="app" style="height: 10%">
+@section('chooser')
+    <div id="app" style="height: 80px">
         <Site-chooser :compo=true></Site-chooser>
     </div>
+@endsection
 
-    <nav class="w3-theme-dark">
-        <button class="hamburger hamburger--slider" type="button">
-        <span class="hamburger-box">
-            <span class="hamburger-inner"></span>
-        </span>
-        </button>
-    </nav>
+@section('content')
+
+    <div id="menuVue">
+        <Menu-dynamic :links='["Qui est IDEO ?", "Projets", "Albums", "Galeries", "Contacts", "Commentaires"]'></Menu-dynamic>
+    </div>
+
 @endsection

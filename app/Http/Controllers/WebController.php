@@ -16,12 +16,14 @@ class WebController extends Controller
     public function Studio()
     {
         $this->AddJavascriptRotue();
+
         return view("studio");
     }
 
     public function Compo()
     {
         $this->AddJavascriptRotue();
+
         return view("compo");
     }
 

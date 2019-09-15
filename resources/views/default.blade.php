@@ -14,6 +14,10 @@
 
 <body class="w3-theme-light">
 
+<div id="chooser" class="w3-auto">
+    @yield('chooser')
+</div>
+
 <div id="swup" class="transition-fade w3-auto">
 
     @yield('content')

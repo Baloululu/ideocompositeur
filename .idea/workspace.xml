@@ -3,8 +3,19 @@
   <component name="ChangeListManager">
     <list default="true" id="e78b48ac-3cb9-48de-bd2b-fd2c3906239e" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Envoy.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/Envoy.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config/app.php" beforeDir="false" afterPath="$PROJECT_DIR$/config/app.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/WebController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/WebController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/css/common.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/css/common.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/css/compo.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/css/compo.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/css/studio.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/css/studio.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/js/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/js/app.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/mix-manifest.json" beforeDir="false" afterPath="$PROJECT_DIR$/public/mix-manifest.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/js/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/app.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/js/components/SiteChooser.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/components/SiteChooser.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/sass/_w3.scss" beforeDir="false" afterPath="$PROJECT_DIR$/resources/sass/_w3.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/sass/common.scss" beforeDir="false" afterPath="$PROJECT_DIR$/resources/sass/common.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/compo.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/compo.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/default.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/default.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/studio.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/studio.blade.php" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />

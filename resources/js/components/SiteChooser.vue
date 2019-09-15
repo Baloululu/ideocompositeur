@@ -6,7 +6,7 @@
         >
             <div class="w3-display-container dark-grey" style="height: 100%">
                 <div class="w3-container w3-display-left w3-center width100">
-                    <h4 style="margin: 0">STUDIO</h4>
+                    <p style="margin: 0" :class="{ 'w3-Xlarge': IsStudio }">STUDIO</p>
                 </div>
             </div>
         </a>
@@ -20,7 +20,7 @@
         >
             <div class="w3-display-container dark-red" style="height: 100%">
                 <div class="w3-container w3-display-left w3-center width100">
-                    <h4 style="margin: 0">MES COMPOS</h4>
+                    <p style="margin: 0" :class="{ 'w3-Xlarge': IsCompo }">MES COMPOS</p>
                 </div>
             </div>
         </a>
