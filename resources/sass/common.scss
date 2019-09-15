@@ -117,13 +117,43 @@ html.is-animating .transition-fade {
 nav{
     display: block;
     position: fixed;
-    right: 0;
-    top: 15%;
+    top: 0;
+    width: 200px;
+}
+
+.border-bottom-left-round{
+    border-bottom-left-radius: 10px;
+}
+
+#chooser{
+    height: 80px;
+}
+
+#menuLarge{
+    border-radius: 0 20px;
+}
+
+#menuLarge a:first-child{
+    border-top-right-radius: 20px;
+}
+
+#menuLarge a:last-child{
+    border-bottom-left-radius: 20px;
+}
+
+.content{
+    padding-left: 200px;
 }
 
 @media (max-width:992px){
     nav{
-        border-bottom-left-radius: 10px;
+        right: 0;
+        top: 15%;
+        width: auto;
+    }
+
+    .content{
+        padding-left: 0;
     }
 
     #menuCollapse a:last-child{

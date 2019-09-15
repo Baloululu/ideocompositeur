@@ -7,7 +7,7 @@
 @section('title', 'Studio')
 
 @section('chooser')
-    <div id="app" style="height: 80px">
+    <div id="app">
         <Site-chooser :studio=true></Site-chooser>
     </div>
 @endsection
@@ -15,7 +15,7 @@
 @section('content')
 
     <div id="menuVue">
-        <Menu-dynamic :links='["Accès", "Matériel", "Prestations", "Contacts", "Projets/<br/>Commentaires"]'></Menu-dynamic>
+        <Menu-dynamic :is-studio=true></Menu-dynamic>
     </div>
 
 @endsection

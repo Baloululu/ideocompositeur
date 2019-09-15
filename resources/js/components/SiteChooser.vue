@@ -38,8 +38,8 @@
             return {
                 studioSelected: false,
                 compoSelected: false,
-                compoRoute: compoPath,
-                studioRoute: studioPath
+                compoRoute: php.compoPath,
+                studioRoute: php.studioPath
             }
         },
 

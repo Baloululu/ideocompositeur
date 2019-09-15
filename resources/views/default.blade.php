@@ -14,7 +14,7 @@
 
 <body class="w3-theme-light">
 
-<div id="chooser" class="w3-auto">
+<div id="chooser" class="w3-auto content">
     @yield('chooser')
 </div>
 

@@ -31,7 +31,10 @@ class WebController extends Controller
     {
         JavaScript::put([
             "studioPath" => route("studio"),
-            "compoPath" => route("compo")
+            "compoPath" => route("compo"),
+            "logoPath" => asset('images/common/small/sIdeo_logo.png'),
+            "studioMenu" => ["Accès", "Materiel", "Prestations", "Contacts", "Projets/<br/>Commentaires"],
+            "compoMenu" => ["Qui est IDEO ?", "Projets", "Albums", "Galerie", "Contacts", "Commentaires"]
         ]);
     }
 }

@@ -23,16 +23,16 @@ mix.browserSync({
 
 if (mix.inProduction()) {
     mix.version();
-    mix.options({
-        purifyCss: {
-            purifyOptions: {
-                whitelist: [
-                    "is-animating", "webp", "no-webp", "small", "large", "dark-red", "dark-grey", "diagonalsvg", "#studio", "#compo", "w3-row",
-                    "w3-center", "w3-col", "w3-block", "w3-display-container", "w3-display-left"
-                ]
-            }
-        }
-    });
+    // mix.options({
+    //     purifyCss: {
+    //         purifyOptions: {
+    //             whitelist: [
+    //                 "is-animating", "webp", "no-webp", "small", "large", "dark-red", "dark-grey", "diagonalsvg", "#studio", "#compo", "w3-row",
+    //                 "w3-center", "w3-col", "w3-block", "w3-display-container", "w3-display-left", "*hide*"
+    //             ]
+    //         }
+    //     }
+    // });
 }
 
 mix.disableNotifications();
