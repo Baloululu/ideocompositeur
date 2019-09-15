@@ -13,6 +13,7 @@
       <change beforePath="$PROJECT_DIR$/resources/views/compo.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/compo.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/default.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/default.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/studio.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/studio.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/webpack.mix.js" beforeDir="false" afterPath="$PROJECT_DIR$/webpack.mix.js" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -256,7 +257,7 @@
       <workItem from="1566544174336" duration="11000" />
       <workItem from="1568475047762" duration="2964000" />
       <workItem from="1568484195459" duration="9729000" />
-      <workItem from="1568568734412" duration="7383000" />
+      <workItem from="1568568734412" duration="7818000" />
     </task>
     <servers />
   </component>

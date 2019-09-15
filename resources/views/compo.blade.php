@@ -7,7 +7,7 @@
 @section('title', 'Compositeur')
 
 @section('chooser')
-    <div id="app">
+    <div id="app" style="height: 80px">
         <Site-chooser :compo=true></Site-chooser>
     </div>
 @endsection

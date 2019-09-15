@@ -7,7 +7,7 @@
 @section('title', 'Studio')
 
 @section('chooser')
-    <div id="app">
+    <div id="app" style="height: 80px">
         <Site-chooser :studio=true></Site-chooser>
     </div>
 @endsection
