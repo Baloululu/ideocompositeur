@@ -16,3 +16,5 @@ Route::get('/', "WebController@Menu")->name("home");
 Route::get('studio', "WebController@Studio")->name("studio");
 
 Route::get('compo', "WebController@Compo")->name("compo");
+
+Route::resource('admin', 'AdminController', ["except" => "show"]);

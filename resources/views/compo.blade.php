@@ -18,4 +18,6 @@
         <Menu-dynamic :is-studio=false></Menu-dynamic>
     </div>
 
+    @include("articles")
+
 @endsection

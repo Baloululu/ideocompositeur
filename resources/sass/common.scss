@@ -127,6 +127,8 @@ nav{
 
 #menuLarge{
     border-radius: 0 20px;
+    height: 100%;
+    width: 180px;
 }
 
 #menuLarge a:first-child{
@@ -141,15 +143,23 @@ nav{
     padding-left: 200px;
 }
 
+.text-content{
+    margin-left: 200px;
+}
+
 @media (max-width:992px){
     nav{
         right: 0;
-        top: 15%;
+        top: 85px;
         width: auto;
     }
 
     .content{
         padding-left: 0;
+    }
+
+    .text-content{
+        margin-left: 0;
     }
 
     #menuCollapse a:last-child{
