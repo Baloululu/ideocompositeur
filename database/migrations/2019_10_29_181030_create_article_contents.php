@@ -18,7 +18,7 @@ class CreateArticleContents extends Migration
             $table->unsignedInteger("article_id");
             $table->unsignedInteger("country_code_id");
             $table->string("title", 100)->default("");
-            $table->text("content")->default("");
+            $table->text("content")->nullable();
 
             $table->foreign("article_id")->references("id")->on("articles");
             $table->foreign("country_code_id")->references("id")->on("country_code");
