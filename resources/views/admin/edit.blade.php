@@ -36,6 +36,9 @@
 {{ Form::label("content", "Contenu") }}
 {{ Form::textArea("content", $article->articleContents[0]->content, ["class" => "w3-input"]) }}
 
+{{ Form::label("online", "En ligne") }}
+{{ Form::checkbox("online", "1", $article->online) }}
+
 {{ Form::submit("Enregistrer") }}
 
 {{ Form::close() }}

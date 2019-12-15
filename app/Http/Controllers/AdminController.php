@@ -56,9 +56,9 @@ class AdminController extends Controller
     public function store(StoreArticle $request)
     {
         $article = new Article();
-        $article->category_id = 1;
         $article->image = $this->StoreImage($request);
         $article->category_id = $request->get("category_id", 1);
+        $article->online = $request->get("online", false);
         $article->save();
 
         $articleContent = new ArticleContent();
@@ -109,7 +109,7 @@ class AdminController extends Controller
             Storage::disk("public")->deleteDirectory($article->image);
         }
         $article->image = $this->StoreImage($request);
-
+        $article->online = $request->get("online", false);
         $article->save();
 
         $articleContent = ArticleContent::where("article_id", $id)->first();

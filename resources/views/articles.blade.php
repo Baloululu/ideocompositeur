@@ -1,7 +1,8 @@
 <div class="text-content">
     @foreach($catContent as $cat)
         @foreach($cat->articles as $article)
-            <img src="/storage/{{ $article->image }}/small.jpg" alt="">
+            {{--<img src="{{ Storage::url($article->image) }}/small.jpg" alt="">--}}
+            <img src="{{ $article->image }}" alt="">
             <h1>{{ $article->articleContents[0]->title }}</h1>
 
             <p>{{ $article->articleContents[0]->content }}</p>

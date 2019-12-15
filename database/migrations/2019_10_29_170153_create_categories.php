@@ -16,21 +16,21 @@ class CreateCategories extends Migration
     {
         Schema::create('categories', function (Blueprint $table) {
             $table->increments('id');
-            $table->enum("site", ["studio", "compo"]);
+            $table->enum("site", ["Studio", "Compo"]);
             $table->unsignedTinyInteger("position");
         });
 
         $cats = array();
         for($i = 1; $i < 7; $i++)
         {
-            $cat["site"] = "compo";
+            $cat["site"] = "Compo";
             $cat["position"] = $i;
             $cats[] = $cat;
         }
 
         for($i = 1; $i < 6; $i++)
         {
-            $cat["site"] = "studio";
+            $cat["site"] = "Studio";
             $cat["position"] = $i;
             $cats[] = $cat;
         }

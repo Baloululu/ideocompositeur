@@ -21,7 +21,7 @@ class WebController extends Controller
         $this->AddJavascriptRoute();
 
         $catContent = Category::select("id")
-            ->where("site", "studio")
+            ->where("site", "Studio")
             ->orderBy("position")
             ->with("articles")
             ->get();
@@ -34,7 +34,7 @@ class WebController extends Controller
         $this->AddJavascriptRoute();
 
         $catContent = Category::select("id")
-            ->where("site", "compo")
+            ->where("site", "Compo")
             ->orderBy("position")
             ->with("articles")
             ->get();
@@ -53,12 +53,12 @@ class WebController extends Controller
 
         $menu = ["compo" => [], "studio" => []];
 
-        foreach ($categories["compo"] as $cat)
+        foreach ($categories["Compo"] as $cat)
         {
             $menu["compo"][] = $cat->titles[0]->title;
         }
 
-        foreach ($categories["studio"] as $cat)
+        foreach ($categories["Studio"] as $cat)
         {
             $menu["studio"][] = $cat->titles[0]->title;
         }
