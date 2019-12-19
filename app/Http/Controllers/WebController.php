@@ -55,12 +55,12 @@ class WebController extends Controller
 
         foreach ($categories["Compo"] as $cat)
         {
-            $menu["compo"][] = $cat->titles[0]->title;
+            $menu["compo"][$cat->id] = $cat->titles[0]->title;
         }
 
         foreach ($categories["Studio"] as $cat)
         {
-            $menu["studio"][] = $cat->titles[0]->title;
+            $menu["studio"][$cat->id] = $cat->titles[0]->title;
         }
 
         JavaScript::put([

@@ -1,11 +1,18 @@
 <div class="text-content">
-    @foreach($catContent as $cat)
-        @foreach($cat->articles as $article)
-            {{--<img src="{{ Storage::url($article->image) }}/small.jpg" alt="">--}}
-            <img src="{{ $article->image }}" alt="">
-            <h1>{{ $article->articleContents[0]->title }}</h1>
+    <div id="articles">
+        @foreach($catContent as $cat)
+            <div id="cat{{ $cat->id }}">
+                @foreach($cat->articles as $article)
 
-            <p>{{ $article->articleContents[0]->content }}</p>
+                    <Article-title title="{{ $article->articleContents[0]->title }}" image="{{ $article->image }}"></Article-title>
+
+                    {{--<img src="{{ Storage::url($article->image) }}/small.jpg" alt="">--}}
+
+                    <div class="w3-container">
+                        <p>{{ $article->articleContents[0]->content }}</p>
+                    </div>
+                @endforeach
+            </div>
         @endforeach
-    @endforeach
+    </div>
 </div>

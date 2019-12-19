@@ -15,7 +15,7 @@
         <div class="w3-bar-block w3-hide-medium w3-hide-small">
             <img class="w3-padding-large" style="height: 80px; margin-bottom: 15px" :src="logoPath" alt="Logo">
             <div id="menuLarge" class="w3-theme-dark w3-round w3-large" style="height: 100%">
-                <a href="#" class="w3-bar-item w3-button" v-for="link in links" v-html="link"></a>
+                <a class="w3-bar-item w3-button" v-for="(link, id) in links" v-html="link" v-on:click.prevent="ScrollTo(id)"></a>
             </div>
         </div>
     </nav>
@@ -38,6 +38,10 @@
         methods: {
             "Toggle": function () {
                 this.isActive = !this.isActive;
+            },
+
+            "ScrollTo": function ($id) {
+                swup.scrollTo(document.getElementById("cat" + $id))
             }
         },
 

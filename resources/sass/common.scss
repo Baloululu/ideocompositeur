@@ -119,6 +119,7 @@ nav{
     position: fixed;
     top: 0;
     width: 200px;
+    z-index: 100;
 }
 
 .border-bottom-left-round{
@@ -164,5 +165,21 @@ nav{
 
     #menuCollapse a:last-child{
         border-bottom-left-radius: 10px;
+    }
+}
+
+.imageTitle{
+    margin-top: 40px;
+    height: 300px;
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: relative;
+
+    h1{
+        position: absolute;
+        width: 100%;
+        top: 50px;
+        text-align: center;
+        background-color: rgba(255, 255, 255, 0.8)
     }
 }
