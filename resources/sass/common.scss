@@ -9,12 +9,17 @@ $hamburger-layer-color: white;
 @import 'w3';
 @import "variables";
 @import "bandeau";
+@import "fonts";
 
 $medium-min: 800px;
 $large-min: 1280px;
 
 html, body{
   height: 100%;
+}
+
+#app {
+  font-family: eurofighter;
 }
 
 .transition-fade {
@@ -174,6 +179,7 @@ nav{
     background-repeat: no-repeat;
     background-size: cover;
     position: relative;
+    background-position: center;
 
     h1{
         position: absolute;

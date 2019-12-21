@@ -13,7 +13,7 @@
         </div>
 
         <div class="w3-bar-block w3-hide-medium w3-hide-small">
-            <img class="w3-padding-large" style="height: 80px; margin-bottom: 15px" :src="logoPath" alt="Logo">
+            <img class="w3-padding-large" style="width: 180px" :src="logoPath" alt="Logo">
             <div id="menuLarge" class="w3-theme-dark w3-round w3-large" style="height: 100%">
                 <a class="w3-bar-item w3-button" v-for="(link, id) in links" v-html="link" v-on:click.prevent="ScrollTo(id)"></a>
             </div>
@@ -31,7 +31,7 @@
             return {
                 isActive: false,
                 links: [],
-                logoPath: php.logoPath
+                logoPath: "",
             }
         },
 
@@ -47,6 +47,7 @@
 
         mounted() {
             this.links = this.isStudio ? php.studioMenu : php.compoMenu;
+            this.logoPath = this.isStudio ? php.logoNeeroPath : php.logoIdeoPath;
         }
     }
 </script>

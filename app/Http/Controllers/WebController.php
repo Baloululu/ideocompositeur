@@ -66,7 +66,8 @@ class WebController extends Controller
         JavaScript::put([
             "studioPath" => route("studio"),
             "compoPath" => route("compo"),
-            "logoPath" => asset('images/common/small/sIdeo_logo.png'),
+            "logoIdeoPath" => asset('images/common/logos/IDEO-Compositeur.svg'),
+            "logoNeeroPath" => asset('images/common/logos/NEERO-Studio.svg'),
             "studioMenu" => $menu["studio"],
             "compoMenu" => $menu["compo"]
         ]);

@@ -37,7 +37,7 @@
                     </td>
                     <td>
                         <div class="w3-bar">
-                            {{ Form::open(["route" => ["admin.destroy", $article->id], "method" => "delete"]) }}
+                            {{ Form::open(["route" => ["admin.destroy", $article->id], "method" => "delete", "onsubmit" => 'return confirm("Voulez-vous vraiment supprimer cet article ?");']) }}
                             <a href="{{ route('admin.edit', $article->id) }}" class="w3-button w3-blue w3-round">Modifier</a>
                             {{ Form::button('<i class="fas fa-trash-alt"></i>', ["type" => "submit", "class" => "w3-button w3-red w3-round"]) }}
                             {{ Form::close() }}
