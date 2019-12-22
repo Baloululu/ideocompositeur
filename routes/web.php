@@ -18,7 +18,7 @@ Route::get('studio', "WebController@Studio")->name("studio");
 Route::get('compo', "WebController@Compo")->name("compo");
 
 Route::resource('admin', 'AdminController', ["except" => "show"])->middleware('auth');
+Route::get('link', "AdminController@Link")->name("link")->middleware("auth");
 
 Auth::routes(['register' => false]);
-
 Route::get('/home', 'HomeController@index')->name('home');

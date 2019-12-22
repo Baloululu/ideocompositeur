@@ -140,6 +140,12 @@ class AdminController extends Controller
         return redirect(route("admin.index"))->with(["success" => "Article supprimé"]);
     }
 
+    public function Link()
+    {
+        system("php artisan storage:link");
+        return "Link created";
+    }
+
     private function StoreImage($request)
     {
         if ($request->hasFile("image"))
