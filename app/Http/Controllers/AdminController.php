@@ -142,8 +142,8 @@ class AdminController extends Controller
 
     public function Link()
     {
-        exec("php ../artisan storage:link", $output);
-        return $output;
+        system("ln -s ../storage/app/public storage");
+        return "\nfin";
     }
 
     private function StoreImage($request)
@@ -162,7 +162,7 @@ class AdminController extends Controller
                     ->encode("jpg", 75);
                 Storage::disk("public")->put($out."/small.jpg", $small);
 
-                /*$medium = Image::make($path)
+                $medium = Image::make($path)
                     ->resize(1280, null, function ($constrainte){
                         $constrainte->aspectRatio();
                     })
@@ -174,7 +174,7 @@ class AdminController extends Controller
                         $constrainte->aspectRatio();
                     })
                     ->encode("jpg", 75);
-                Storage::disk("public")->put($out."/large.jpg", $large);*/
+                Storage::disk("public")->put($out."/large.jpg", $large);
 
                 return $out;
             }
