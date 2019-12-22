@@ -142,8 +142,8 @@ class AdminController extends Controller
 
     public function Link()
     {
-        system("php artisan storage:link");
-        return "Link created";
+        exec("php ../artisan storage:link", $output);
+        return $output;
     }
 
     private function StoreImage($request)
