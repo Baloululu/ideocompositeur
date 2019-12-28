@@ -145,6 +145,16 @@ nav{
     border-bottom-left-radius: 20px;
 }
 
+.menuVisible{
+    transform: translateY(0px);
+    transition: transform .4s;
+}
+
+.menuInvisible{
+    transform: translateY(-200px);
+    transition: transform 1s;
+}
+
 .content{
     padding-left: 200px;
 }

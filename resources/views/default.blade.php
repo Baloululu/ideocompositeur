@@ -12,7 +12,7 @@
     <title>@yield('title')</title>
 </head>
 
-<body class="w3-theme-light">
+<body class="w3-theme-light" style="min-height: 600px">
 
 <div id="chooser" class="w3-auto content">
     @yield('chooser')

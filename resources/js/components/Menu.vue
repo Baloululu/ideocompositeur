@@ -1,6 +1,6 @@
 <template>
     <nav>
-        <div class="w3-hide-large w3-theme-dark w3-right-align border-bottom-left-round">
+        <div class="w3-hide-large w3-theme-dark w3-right-align border-bottom-left-round" :class="PhoneMenu">
             <button id="collapseBtn" class="hamburger hamburger--slider" :class="{ 'is-active': isActive } " type="button" v-on:click="Toggle">
         <span class="hamburger-box">
             <span class="hamburger-inner"></span>
@@ -32,22 +32,48 @@
                 isActive: false,
                 links: [],
                 logoPath: "",
+                oldY: 0,
+                isVisible: true
             }
         },
 
         methods: {
-            "Toggle": function () {
+            Toggle: function () {
                 this.isActive = !this.isActive;
             },
 
-            "ScrollTo": function ($id) {
-                swup.scrollTo(document.getElementById("cat" + $id))
+            ScrollTo: function (id) {
+                swup.scrollTo(document.getElementById("cat" + id))
+            },
+
+            handleScroll: function (event) {
+                this.isVisible = this.oldY - window.scrollY >= 0;
+                this.oldY = window.scrollY;
+            }
+        },
+
+        computed: {
+            PhoneMenu()
+            {
+                if (this.isVisible)
+                {
+                    return "menuVisible"
+                }
+                else
+                {
+                    return "menuInvisible"
+                }
             }
         },
 
         mounted() {
+            window.addEventListener('scroll', this.handleScroll);
             this.links = this.isStudio ? php.studioMenu : php.compoMenu;
             this.logoPath = this.isStudio ? php.logoNeeroPath : php.logoIdeoPath;
+        },
+
+        destroyed() {
+            window.removeEventListener('scroll', this.handleScroll);
         }
     }
 </script>

@@ -32,5 +32,9 @@
         "swup": "^2.0.5",
         "vue": "^2.5.17",
         "vue-template-compiler": "^2.6.10"
+    },
+    "dependencies": {
+        "@grafikart/drop-files-element": "^1.0.9",
+        "vue-resize-directive": "^1.2.0"
     }
 }

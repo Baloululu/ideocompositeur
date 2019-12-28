@@ -1,6 +1,7 @@
 {
-    "/js/app.js": "/js/app.js?id=36a2692c49419bd5f026",
-    "/css/common.css": "/css/common.css?id=bddada55b1823bc04669",
-    "/css/studio.css": "/css/studio.css?id=da306de35a10144e702d",
-    "/css/compo.css": "/css/compo.css?id=de1703f5b387920d78b2"
+    "/js/admin.js": "/js/admin.js",
+    "/js/app.js": "/js/app.js",
+    "/css/common.css": "/css/common.css",
+    "/css/studio.css": "/css/studio.css",
+    "/css/compo.css": "/css/compo.css"
 }

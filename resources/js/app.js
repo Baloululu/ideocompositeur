@@ -21,22 +21,31 @@ import SiteChooser from "./components/SiteChooser";
 import MenuDynamic from "./components/Menu";
 import ArticleTitle from "./components/Title";
 
+let app, menu, articles;
+
 function mount() {
-    new Vue({
+    app = new Vue({
         el: '#app',
         components: {SiteChooser}
     });
 
-    new Vue({
+    menu = new Vue({
         el: "#menuVue",
         components: {MenuDynamic}
     });
 
-    new Vue({
+    articles = new Vue({
         el: "#articles",
         components: {ArticleTitle}
     });
 }
+
+function unMount() {
+    app.$destroy();
+    menu.$destroy();
+    articles.$destroy();
+}
 mount();
 
 swup.on('contentReplaced', mount);
+swup.on('willReplaceContent', unMount);

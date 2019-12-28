@@ -11,14 +11,22 @@
 |
 */
 
-Route::get('/', "WebController@Menu")->name("home");
+use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Route;
+
+Route::get('/', "WebController@Menu")->name("menu");
 
 Route::get('studio', "WebController@Studio")->name("studio");
 
 Route::get('compo', "WebController@Compo")->name("compo");
 
-Route::resource('admin', 'AdminController', ["except" => "show"])->middleware('auth');
-Route::get('link', "AdminController@Link")->name("link")->middleware("auth");
+Route::prefix("admin")->middleware('auth')->group(function (){
+    Route::get('/', "Admin\AdminController@Index")->name("admin");
+    Route::resource('articles', 'Admin\ArticleController', ["except" => "show"]);
+    Route::get('link', "Admin\AdminController@Link")->name("link");
 
-Auth::routes(['register' => false]);
-Route::get('/home', 'HomeController@index')->name('home');
+    Route::get("galerie", "Admin\GalerieController@Index")->name("galerie.index");
+    Route::post("galerie", "Admin\GalerieController@Upload")->name("galerie.upload");
+});
+
+Auth::routes(['register' => false, "reset" => false]);

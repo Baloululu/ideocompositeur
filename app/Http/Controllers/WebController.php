@@ -23,7 +23,9 @@ class WebController extends Controller
         $catContent = Category::select("id")
             ->where("site", "Studio")
             ->orderBy("position")
-            ->with("articles")
+            ->with(["articles" => function($query){
+                $query->where("online", true);
+            }])
             ->get();
 
         return view("studio", compact(["catContent"]));
@@ -36,7 +38,9 @@ class WebController extends Controller
         $catContent = Category::select("id")
             ->where("site", "Compo")
             ->orderBy("position")
-            ->with("articles")
+            ->with(["articles" => function($query){
+                $query->where("online", true);
+            }])
             ->get();
 
         return view("compo", compact(["catContent"]));

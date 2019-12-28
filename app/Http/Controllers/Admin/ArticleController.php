@@ -1,21 +1,17 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\Admin;
 
 use App\Article;
 use App\ArticleContent;
 use App\Category;
+use App\Http\Controllers\Controller;
 use App\Http\Requests\StoreArticle;
 use Illuminate\Support\Facades\Storage;
 use Intervention\Image\Facades\Image;
 
-class AdminController extends Controller
+class ArticleController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
     public function index()
     {
         $catContent = Category::select(["id", "site"])
@@ -26,14 +22,9 @@ class AdminController extends Controller
                 return $item->site;
             });
 
-        return view("admin.index", compact(["catContent"]));
+        return view("admin.articles.index", compact(["catContent"]));
     }
 
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
     public function create()
     {
         $categories = Category::select("id")->locatedTitles()->get();
@@ -44,15 +35,16 @@ class AdminController extends Controller
             $select[$cat->id] = $cat->titles[0]->title;
         }
 
-        return view("admin.create", compact(["select"]));
+        $url = route("articles.store");
+        $method = "post";
+        $article = new Article();
+
+        $article->title = "";
+        $article->content = "";
+
+        return view("admin.articles.edit", compact(["select", "url", "method", "article"]));
     }
 
-    /**
-     * Store a newly created resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
-     */
     public function store(StoreArticle $request)
     {
         $article = new Article();
@@ -68,15 +60,9 @@ class AdminController extends Controller
         $articleContent->content = $request->get("content", "");
         $articleContent->save();
 
-        return redirect(route("admin.index"))->with(["success" => "Article ajouté"]);
+        return redirect(route("articles.index"))->with(["success" => "Article ajouté"]);
     }
 
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
     public function edit($id)
     {
         $categories = Category::select("id")->locatedTitles()->get();
@@ -89,26 +75,29 @@ class AdminController extends Controller
 
         $article = Article::where("id", $id)->with("articleContents")->first();
 
-        return view("admin.edit", compact(["article", "select"]));
+        $article->title = $article->articleContents[0]->title;
+        $article->content = $article->articleContents[0]->content;
+
+        $url = route("articles.update", $article->id);
+        $method = "put";
+
+        return view("admin.articles.edit", compact(["article", "select", "method", "url"]));
     }
 
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
     public function update(StoreArticle $request, $id)
     {
         $article = Article::find($id);
         $article->category_id = $request->get("category_id", 1);
 
-        if ($article->image != null)
+        $path = $this->StoreImage($request);
+        if ($path != null)
         {
-            Storage::disk("public")->deleteDirectory($article->image);
+            if ($article->image != null)
+            {
+                Storage::disk("public")->deleteDirectory($article->image);
+            }
+            $article->image = $path;
         }
-        $article->image = $this->StoreImage($request);
         $article->online = $request->get("online", false);
         $article->save();
 
@@ -117,15 +106,9 @@ class AdminController extends Controller
         $articleContent->content = $request->get("content", "");
         $articleContent->save();
 
-        return redirect(route("admin.index"))->with(["success" => "Article modifié"]);
+        return redirect(route("articles.index"))->with(["success" => "Article modifié"]);
     }
 
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
     public function destroy($id)
     {
         ArticleContent::where("article_id", $id)->delete();
@@ -137,13 +120,7 @@ class AdminController extends Controller
         }
         $article->delete();
 
-        return redirect(route("admin.index"))->with(["success" => "Article supprimé"]);
-    }
-
-    public function Link()
-    {
-        system("ln -s ../storage/app/public storage");
-        return "\nfin";
+        return redirect(route("articles.index"))->with(["success" => "Article supprimé"]);
     }
 
     private function StoreImage($request)
