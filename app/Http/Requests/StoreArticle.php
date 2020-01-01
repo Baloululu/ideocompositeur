@@ -27,7 +27,7 @@ class StoreArticle extends FormRequest
             "image" => "image",
             "title" => "required|string",
             "content" => "required|string",
-            "category_id" => "required",
+            "category_id" => "required|integer",
             "online" => "boolean"
         ];
     }
