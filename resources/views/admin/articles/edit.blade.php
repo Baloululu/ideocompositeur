@@ -43,8 +43,8 @@
                 {{ Form::checkbox("online", "1", null, ["class" => "w3-check"]) }}
             </div>
             <div class="w3-half w3-right-align">
-                <a href="{{ route("articles.index") }}" class="w3-button w3-theme">Retour</a>
-                {{ Form::submit("Enregistrer", ["class" => "w3-button w3-blue"]) }}
+                <a href="{{ route("articles.index") }}" class="w3-button w3-round w3-blue-gray">Retour</a>
+                {{ Form::submit("Enregistrer", ["class" => "w3-button w3-round w3-green"]) }}
             </div>
         </div>
     </div>

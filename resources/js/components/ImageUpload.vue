@@ -1,4 +1,4 @@
-<style lang="scss">
+<style lang="scss" scoped>
 
     input[type="file"]{
         position: absolute;
@@ -32,7 +32,7 @@
 <template>
     <div>
         <div>
-            <label for="files">Files</label>
+            <label for="files">Images</label>
             <input type="file" id="files" ref="files" accept="image/*" multiple v-on:change="handleFilesUpload()"/>
         </div>
         <div class="files-container">
@@ -42,8 +42,8 @@
             </div>
         </div>
 
-        <button v-on:click.prevent="addFiles()">Add Files</button>
-        <button v-on:click.prevent="submitFiles()">Submit</button>
+        <button v-on:click.prevent="addFiles()" class="w3-button w3-round w3-blue-gray">Ajouter des images</button>
+        <button v-on:click.prevent="submitFiles()" class="w3-button w3-round w3-green" >Envoyer</button>
     </div>
 </template>
 
