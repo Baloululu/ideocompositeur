@@ -20,6 +20,9 @@ import Vue from 'vue';
 import SiteChooser from "./components/SiteChooser";
 import MenuDynamic from "./components/Menu";
 import ArticleTitle from "./components/Title";
+import axios from "axios";
+
+Vue.prototype.$axios = axios;
 
 let app, menu, articles;
 

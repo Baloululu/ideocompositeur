@@ -15,4 +15,6 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::post("menu", "ApiController@Menu");
-Route::post("image", "ApiController@Image")->name("uploadImage");
+Route::post("image", "ApiController@Image")
+    ->name("uploadImage")
+    ->middleware('auth:api');

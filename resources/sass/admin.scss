@@ -15,6 +15,17 @@ input[type="file"]{
     margin: 0 -5px;
 }
 
+.thumbContainer{
+    display: flex;
+    flex-wrap: wrap;
+    margin: -5px;
+
+    a{
+        margin: 5px;
+        padding: 0;
+    }
+}
+
 .preview{
     width: 200px;
     margin: 5px;

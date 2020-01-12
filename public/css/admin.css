@@ -365,6 +365,18 @@ input[type=file] {
   margin: 0 -5px;
 }
 
+.thumbContainer {
+  display: -webkit-box;
+  display: flex;
+  flex-wrap: wrap;
+  margin: -5px;
+}
+
+.thumbContainer a {
+  margin: 5px;
+  padding: 0;
+}
+
 .preview {
   width: 200px;
   margin: 5px;

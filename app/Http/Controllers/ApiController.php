@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Category;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Storage;
 use Illuminate\Support\Str;
 use Intervention\Image\Facades\Image;
 
@@ -46,18 +47,18 @@ class ApiController extends Controller
     {
         if ($request->has("image"))
         {
-            return response()->json(["message" => "Data url saved"], 200);
             $name = Str::random(40) . ".jpg";
+
             $original = Image::make($request->get("image"))
                 ->interlace(true)
                 ->encode("jpg", 75);
-//            Storage::disk("public")->put("Galerie/" . $name, $original);
+            Storage::disk("public")->put("Galerie/Studio/" . $name, $original);
 
             $thumb = Image::make($request->get("image"))
                 ->interlace(true)
                 ->fit(300)
                 ->encode("jpg", 75);
-//            Storage::disk("public")->put("Galerie/Thumb" . $name, $thumb);
+            Storage::disk("public")->put("Galerie/Studio/Thumbs/" . $name, $thumb);
 
             return response()->json(["message" => "Data url saved"], 200);
         }

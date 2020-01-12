@@ -9,8 +9,6 @@
 </template>
 
 <script>
-    import axios from "axios";
-
     export default {
         props: {
             file: {type: File, required: true},
@@ -34,7 +32,7 @@
                 let formData = new FormData();
                 formData.append("image", this.$refs.image.src);
 
-                axios.post(route,
+                this.$axios.post(route,
                     formData,
                     {
                         headers: { 'Content-Type': 'multipart/form-data' },

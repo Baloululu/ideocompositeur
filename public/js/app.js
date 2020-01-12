@@ -2635,8 +2635,6 @@ module.exports = function isBuffer (obj) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! axios */ "./node_modules/axios/index.js");
-/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(axios__WEBPACK_IMPORTED_MODULE_0__);
 //
 //
 //
@@ -2660,7 +2658,6 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-
 /* harmony default export */ __webpack_exports__["default"] = ({
   props: {
     isStudio: {
@@ -2706,7 +2703,7 @@ __webpack_require__.r(__webpack_exports__);
     window.addEventListener('scroll', this.handleScroll);
     var formData = new FormData();
     formData.append("Studio", this.isStudio);
-    axios__WEBPACK_IMPORTED_MODULE_0___default.a.post('/api/menu', formData, {
+    this.$axios.post('/api/menu', formData, {
       headers: {
         'Content-Type': 'multipart/form-data'
       }
@@ -18038,6 +18035,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _components_SiteChooser__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./components/SiteChooser */ "./resources/js/components/SiteChooser.vue");
 /* harmony import */ var _components_Menu__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./components/Menu */ "./resources/js/components/Menu.vue");
 /* harmony import */ var _components_Title__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./components/Title */ "./resources/js/components/Title.vue");
+/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! axios */ "./node_modules/axios/index.js");
+/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_9___default = /*#__PURE__*/__webpack_require__.n(axios__WEBPACK_IMPORTED_MODULE_9__);
 
 
 
@@ -18053,6 +18052,8 @@ var swup = new swup__WEBPACK_IMPORTED_MODULE_0___default.a({
 
 
 
+
+vue__WEBPACK_IMPORTED_MODULE_5___default.a.prototype.$axios = axios__WEBPACK_IMPORTED_MODULE_9___default.a;
 var app, menu, articles;
 
 function mount() {

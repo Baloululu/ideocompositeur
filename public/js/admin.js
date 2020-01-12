@@ -1860,8 +1860,6 @@ module.exports = function isBuffer (obj) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! axios */ "./node_modules/axios/index.js");
-/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(axios__WEBPACK_IMPORTED_MODULE_0__);
 //
 //
 //
@@ -1872,7 +1870,6 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-
 /* harmony default export */ __webpack_exports__["default"] = ({
   props: {
     file: {
@@ -1900,7 +1897,7 @@ __webpack_require__.r(__webpack_exports__);
       this.upload = true;
       var formData = new FormData();
       formData.append("image", this.$refs.image.src);
-      axios__WEBPACK_IMPORTED_MODULE_0___default.a.post(route, formData, {
+      this.$axios.post(route, formData, {
         headers: {
           'Content-Type': 'multipart/form-data'
         },
@@ -1962,7 +1959,6 @@ __webpack_require__.r(__webpack_exports__);
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _ImageSingle__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./ImageSingle */ "./resources/js/components/ImageSingle.vue");
-//
 //
 //
 //
@@ -2576,8 +2572,6 @@ var render = function() {
   var _c = _vm._self._c || _h
   return _c("div", [
     _c("div", [
-      _c("label", { attrs: { for: "files" } }, [_vm._v("Images")]),
-      _vm._v(" "),
       _c("input", {
         ref: "files",
         attrs: { type: "file", id: "files", accept: "image/*", multiple: "" },
@@ -14776,8 +14770,12 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var vue__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! vue */ "./node_modules/vue/dist/vue.common.js");
 /* harmony import */ var vue__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(vue__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var _components_ImageUploadManager__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./components/ImageUploadManager */ "./resources/js/components/ImageUploadManager.vue");
+/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! axios */ "./node_modules/axios/index.js");
+/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(axios__WEBPACK_IMPORTED_MODULE_2__);
 
 
+
+vue__WEBPACK_IMPORTED_MODULE_0___default.a.prototype.$axios = axios__WEBPACK_IMPORTED_MODULE_2___default.a;
 new vue__WEBPACK_IMPORTED_MODULE_0___default.a({
   el: '#vuejs',
   components: {

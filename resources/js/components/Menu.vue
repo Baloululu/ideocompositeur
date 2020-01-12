@@ -22,8 +22,6 @@
 </template>
 
 <script>
-    import axios from "axios";
-
     export default {
         props: {
             isStudio: {type: Boolean}
@@ -77,7 +75,7 @@
             let formData = new FormData();
             formData.append("Studio", this.isStudio);
 
-            axios.post('/api/menu',
+            this.$axios.post('/api/menu',
                 formData,
                 {
                     headers: {

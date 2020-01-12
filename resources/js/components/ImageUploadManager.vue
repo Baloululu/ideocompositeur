@@ -1,7 +1,6 @@
 <template>
     <div>
         <div>
-            <label for="files">Images</label>
             <input type="file" id="files" ref="files" accept="image/*" multiple v-on:change="handleFilesUpload()"/>
         </div>
         <div class="files-container">
