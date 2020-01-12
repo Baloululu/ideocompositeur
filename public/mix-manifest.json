@@ -3,5 +3,6 @@
     "/js/app.js": "/js/app.js",
     "/css/common.css": "/css/common.css",
     "/css/studio.css": "/css/studio.css",
-    "/css/compo.css": "/css/compo.css"
+    "/css/compo.css": "/css/compo.css",
+    "/css/admin.css": "/css/admin.css"
 }

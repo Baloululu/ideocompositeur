@@ -133,23 +133,26 @@ class ArticleController extends Controller
                 $out = explode(".", $request->file("image")->hashName(), 2)[0];
 
                 $small = Image::make($path)
-                    ->resize(800, null, function ($constrainte){
-                        $constrainte->aspectRatio();
+                    ->widen(800, function ($constrainte){
+                        $constrainte->upsize();
                     })
+                    ->interlace(true)
                     ->encode("jpg", 75);
                 Storage::disk("public")->put($out."/small.jpg", $small);
 
                 $medium = Image::make($path)
-                    ->resize(1280, null, function ($constrainte){
-                        $constrainte->aspectRatio();
+                    ->widen(1280, function ($constrainte){
+                        $constrainte->upsize();
                     })
+                    ->interlace(true)
                     ->encode("jpg", 75);
                 Storage::disk("public")->put($out."/medium.jpg", $medium);
 
                 $large = Image::make($path)
-                    ->resize(1920, null, function ($constrainte){
-                        $constrainte->aspectRatio();
+                    ->widen(1920, function ($constrainte){
+                        $constrainte->upsize();
                     })
+                    ->interlace(true)
                     ->encode("jpg", 75);
                 Storage::disk("public")->put($out."/large.jpg", $large);
 

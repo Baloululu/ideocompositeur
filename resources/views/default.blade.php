@@ -18,7 +18,7 @@
     @yield('chooser')
 </div>
 
-<div id="swup" class="transition-fade w3-auto">
+<div id="swup" class="transition-fade w3-auto" style="height: 100%">
 
     @yield('content')
 

@@ -14,6 +14,37 @@ $hamburger-layer-color: white;
 $medium-min: 800px;
 $large-min: 1280px;
 
+@include color('amber', $w3-amber);
+@include color('aqua', $w3-aqua);
+@include color('blue', $w3-blue);
+@include color('light-blue', $w3-light-blue);
+@include color('brown', $w3-brown);
+@include color('cyan', $w3-cyan);
+@include color('blue-gray', $w3-blue-gray);
+@include color('green', $w3-green);
+@include color('light-green', $w3-light-green);
+@include color('indigo', $w3-indigo);
+@include color('khaki', $w3-khaki);
+@include color('lime', $w3-lime);
+@include color('orange', $w3-orange);
+@include color('deep-orange', $w3-deep-orange);
+@include color('pink', $w3-pink);
+@include color('purple', $w3-purple);
+@include color('deep-purple', $w3-deep-purple);
+@include color('red', $w3-red);
+@include color('sand', $w3-sand);
+@include color('teal', $w3-teal);
+@include color('yellow', $w3-yellow);
+@include color('white', $w3-white);
+@include color('black', $w3-black);
+@include color('gray', $w3-gray);
+@include color('light-gray', $w3-light-gray);
+@include color('dark-gray', $w3-dark-gray);
+@include color('pale-red', $w3-pale-red);
+@include color('pale-green', $w3-pale-green);
+@include color('pale-yellow', $w3-pale-yellow);
+@include color('pale-blue', $w3-pale-blue);
+
 html, body{
   height: 100%;
 }

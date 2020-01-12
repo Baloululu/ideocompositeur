@@ -8,7 +8,7 @@
             </button>
 
             <div id="menuCollapse" class="w3-bar-block" v-show="isActive">
-                <a href="#" class="w3-bar-item w3-button" v-for="link in links" v-html="link"></a>
+                <a class="w3-bar-item w3-button" v-for="(link, id) in links" v-html="link" v-on:click.prevent="ScrollTo(id)"></a>
             </div>
         </div>
 
@@ -22,6 +22,8 @@
 </template>
 
 <script>
+    import axios from "axios";
+
     export default {
         props: {
             isStudio: {type: Boolean}
@@ -53,6 +55,9 @@
         },
 
         computed: {
+            /**
+             * @return {string}
+             */
             PhoneMenu()
             {
                 if (this.isVisible)
@@ -68,8 +73,23 @@
 
         mounted() {
             window.addEventListener('scroll', this.handleScroll);
-            this.links = this.isStudio ? php.studioMenu : php.compoMenu;
-            this.logoPath = this.isStudio ? php.logoNeeroPath : php.logoIdeoPath;
+
+            let formData = new FormData();
+            formData.append("Studio", this.isStudio);
+
+            axios.post('/api/menu',
+                formData,
+                {
+                    headers: {
+                        'Content-Type': 'multipart/form-data'
+                    }
+                }
+            ).then(resp => {
+                this.links = resp.data.menu;
+                this.logoPath = resp.data.logo;
+            }).catch(() => {
+                console.log("Error loading menu")
+            });
         },
 
         destroyed() {

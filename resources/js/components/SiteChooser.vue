@@ -1,6 +1,6 @@
 <template>
     <div class="w3-center w3-row" style="height: 100%">
-        <a id="studio" class="w3-col w3-block" :class="{small: IsCompo, large: IsStudio}" :href="studioRoute" data-swup-preload
+        <a id="studio" href="/studio" class="w3-col w3-block" :class="{small: IsCompo, large: IsStudio}" data-swup-preload
            @mouseenter="studioSelected = true"
            @mouseleave="studioSelected = false"
         >
@@ -14,7 +14,7 @@
         <div class="w3-col diagonalsvg" style="width: 10%; height: 100%">
         </div>
 
-        <a id="compo" class="w3-col w3-block" :class="{large: IsCompo, small: IsStudio}" :href="compoRoute" data-swup-preload
+        <a id="compo" href="/compo" class="w3-col w3-block" :class="{large: IsCompo, small: IsStudio}" data-swup-preload
            @mouseenter="compoSelected = true"
            @mouseleave="compoSelected = false"
         >
@@ -37,9 +37,7 @@
         data () {
             return {
                 studioSelected: false,
-                compoSelected: false,
-                compoRoute: php.compoPath,
-                studioRoute: php.studioPath
+                compoSelected: false
             }
         },
 

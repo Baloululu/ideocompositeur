@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
     <link rel="stylesheet" href="{{ mix('css/common.css') }}" type="text/css">
-    <link rel="stylesheet" href="{{ mix('css/studio.css') }}" type="text/css">
+    <link rel="stylesheet" href="{{ mix('css/admin.css') }}" type="text/css">
     <script defer async src="{{ mix('js/admin.js') }}" type="application/javascript"></script>
 
     <title>Admin</title>
