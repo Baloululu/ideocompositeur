@@ -19,6 +19,8 @@ mix.js(['resources/js/app.js', 'resources/js/modernizr-custom.js'], 'public/js')
     .sass('resources/sass/admin.scss', 'public/css')
     .copyDirectory('resources/images/common', 'public/images/common');
 
+mix.copy('node_modules/bootstrap/dist/js/bootstrap.min.js', 'public/js');
+
 mix.browserSync({
     proxy: 'localhost:8000'
 });

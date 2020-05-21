@@ -11,6 +11,11 @@ class WebController extends Controller
         return view("menu");
     }
 
+    public function Index()
+    {
+        return view('singlePage');
+    }
+
     public function Studio()
     {
         $catContent = Category::select("id")

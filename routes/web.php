@@ -14,7 +14,7 @@
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 
-Route::get('/', "WebController@Menu")->name("menu");
+Route::get('/', "WebController@Index")->name("index");
 
 Route::get('studio', "WebController@Studio")->name("studio");
 
