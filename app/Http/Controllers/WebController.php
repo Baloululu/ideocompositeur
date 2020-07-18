@@ -13,7 +13,13 @@ class WebController extends Controller
 
     public function Index()
     {
+        include(public_path() . '/social-stream/social-stream.php');
         return view('singlePage');
+    }
+
+    public function Legales()
+    {
+        return view('legales');
     }
 
     public function Studio()

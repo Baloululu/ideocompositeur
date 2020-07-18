@@ -15,6 +15,7 @@ use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', "WebController@Index")->name("index");
+Route::get('infos-legales', "WebController@Legales")->name("legales");
 
 Route::get('studio', "WebController@Studio")->name("studio");
 
