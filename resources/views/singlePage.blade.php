@@ -79,14 +79,14 @@
                     'network' => array(
                         'facebook' => array(
                             'facebook_id_1' => array(
-                                '111295840481523'
+                                '341539782707546'
                             ),
                             'facebook_pagefeed' => 'posts'
                         )
                     ),
                     'theme' => 'sb-modern-light',
                     'itemwidth' => 250,
-                    'results' => 30,
+                    'results' => 5,
                     'iframe' => 'media',
                     'breakpoints' => array('4', '4', '3', '3', '2', '1', '1'), // Number of items (columns) shwoing on each row for different viewport sizes
                     'display_ads' => false,
