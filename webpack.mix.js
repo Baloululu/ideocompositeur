@@ -17,7 +17,8 @@ mix.js(['resources/js/app.js', 'resources/js/modernizr-custom.js'], 'public/js')
     .sass('resources/sass/studio.scss', 'public/css')
     .sass('resources/sass/compo.scss', 'public/css')
     .sass('resources/sass/admin.scss', 'public/css')
-    .copyDirectory('resources/images/common', 'public/images/common');
+    .copyDirectory('resources/images/common', 'public/images/common')
+    .copyDirectory('resources/sound', 'public/sound');
 
 mix.copy('node_modules/bootstrap/dist/js/bootstrap.min.js', 'public/js');
 

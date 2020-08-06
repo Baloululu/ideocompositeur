@@ -6,7 +6,7 @@
         "watch": "concurrently  \"php artisan serve\" \"yarn run development --watch\" --kill-others",
         "watch-poll": "yarn run watch --watch-poll",
         "hot": "cross-env NODE_ENV=development node_modules/webpack-dev-server/bin/webpack-dev-server.js --inline --hot --config=node_modules/laravel-mix/setup/webpack.config.js",
-        "clean": "rm -rf public/css && rm -rf public/fonts && rm -rf public/js && rm -rf public/images",
+        "clean": "rm -rf public/css && rm -rf public/fonts && rm -rf public/js && rm -rf public/images && rm -rf public/sound",
         "prod": "yarn clean && yarn production",
         "production": "cross-env NODE_ENV=production node_modules/webpack/bin/webpack.js --no-progress --hide-modules --config=node_modules/laravel-mix/setup/webpack.config.js"
     },

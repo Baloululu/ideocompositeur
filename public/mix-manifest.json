@@ -1,9 +1,9 @@
 {
-    "/js/admin.js": "/js/admin.js?id=ea01eb09984da8e3ccab",
-    "/js/app.js": "/js/app.js?id=419ebda84b46b3cde642",
-    "/css/common.css": "/css/common.css?id=716bf08c3785f5f361d9",
-    "/css/studio.css": "/css/studio.css?id=da306de35a10144e702d",
-    "/css/compo.css": "/css/compo.css?id=e97550116929f6fc23a0",
-    "/css/admin.css": "/css/admin.css?id=6f76f3499f34fe73add0",
-    "/js/bootstrap.min.js": "/js/bootstrap.min.js?id=61f338f870fcd0ff4636"
+    "/js/admin.js": "/js/admin.js",
+    "/js/app.js": "/js/app.js",
+    "/css/common.css": "/css/common.css",
+    "/css/studio.css": "/css/studio.css",
+    "/css/compo.css": "/css/compo.css",
+    "/css/admin.css": "/css/admin.css",
+    "/js/bootstrap.min.js": "/js/bootstrap.min.js"
 }
